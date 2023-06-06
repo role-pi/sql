@@ -182,8 +182,10 @@ insert into eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, comp
 
 -- convidados
 SELECT
+	enderecos.cep, enderecos.logradouro, enderecos.bairro, enderecos.cidade, enderecos.estado, enderecos.pais,
 	eventos.id_evento, evento.nome, evento.data_inicio, evento.data_fim, evento.endereços_cep, evento.complemento_endereco, 
 	usuario.id_usuario, usuario.nome, usuario.foto_de_perfil_url
+	
 FROM convidados
 INNER JOIN eventos
 		ON convidados.eventos_id_evento = eventos.id_evento
@@ -191,3 +193,9 @@ INNER JOIN enderecos
 		ON eventos.endereco_cep = enderecos.cep
 INNER JOIN usuarios
 		ON convidados.usuarios_id_usuario = usuarios.id_usuario;
+		
+-- updates 
+
+-- enderecos
+
+UPDATE enderecos SET nome
