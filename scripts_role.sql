@@ -7,7 +7,6 @@ DROP DATABASE role;
 CREATE DATABASE IF NOT EXISTS role;
 
 USE role;
-
 -- -----------------------------------------------------
 -- Table `enderecos`
 -- -----------------------------------------------------
@@ -20,7 +19,6 @@ CREATE TABLE IF NOT EXISTS `enderecos` (
   `país` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`cep`)
 );
-
 -- -----------------------------------------------------
 -- Table `eventos`
 -- -----------------------------------------------------
@@ -34,7 +32,6 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   PRIMARY KEY (`id_evento`, `enderecos_cep`),
   CONSTRAINT `fk_eventos_enderecos1` FOREIGN KEY (`enderecos_cep`) REFERENCES `enderecos` (`cep`) 
 );
-
 -- -----------------------------------------------------
 -- Table `usuarios`
 -- -----------------------------------------------------
@@ -44,7 +41,6 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `foto_de_perfil_url` VARCHAR(2000) NULL,
   PRIMARY KEY (`id_usuario`)
 );
-
 -- -----------------------------------------------------
 -- Table `convidados`
 -- -----------------------------------------------------
@@ -66,7 +62,6 @@ CREATE TABLE IF NOT EXISTS `insumos` (
   `descricao` VARCHAR(45) NULL,
   PRIMARY KEY (`id_insumo`)
 );
-
 -- -----------------------------------------------------
 -- Table `transacoes`
 -- -----------------------------------------------------
@@ -183,3 +178,14 @@ insert into eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, comp
 insert into eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) values (23, 'Woolly Brickellbush', '2023-02-16 22:01:53', '2022-07-12 07:09:38', 74593766, 'Hill');
 insert into eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) values (24, 'Plagiobryum Moss', '2022-06-21 13:01:20', '2022-06-24 11:16:10', 74593766, 'Road');
 insert into eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) values (25, 'Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', 74593766, 'Lane');
+
+
+-- convidados
+SELECT
+eventos.id_evento, evento.nome, evento.data_inicio, evento.data_fim, evento.endereços, evento.cep, 
+usuario.id_usuario, usuario.nome, usuario.foto_de_perfil_url
+FROM convidados
+INNER JOIN eventos
+		ON convidados.eventos_id_evento = eventos.id_evento
+INNER JOIN usuarios
+		ON convidados.usuarios_id_usuario = usuarios.id_usuario;
