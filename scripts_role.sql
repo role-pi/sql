@@ -92,35 +92,7 @@ CREATE TABLE IF NOT EXISTS `eventos_has_insumos` (
 );
 
 
--- Inserts
-
--- Usuários
-
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (1, 'Donella', 'http://dummyimage.com/193x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (2, 'Emory', 'http://dummyimage.com/214x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (3, 'Charlotta', 'http://dummyimage.com/102x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (4, 'Denyse', 'http://dummyimage.com/249x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (5, 'Ludovico', 'http://dummyimage.com/167x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (6, 'Kimberlyn', 'http://dummyimage.com/221x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (7, 'Lazaro', 'http://dummyimage.com/232x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (8, 'Jayson', 'http://dummyimage.com/228x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (9, 'Robinetta', 'http://dummyimage.com/179x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (10, 'Mychal', 'http://dummyimage.com/109x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (11, 'Arvy', 'http://dummyimage.com/223x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (12, 'Cristobal', 'http://dummyimage.com/147x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (13, 'Padraic', 'http://dummyimage.com/206x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (14, 'Dominic', 'http://dummyimage.com/220x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (15, 'Munroe', 'http://dummyimage.com/170x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (16, 'Orelee', 'http://dummyimage.com/101x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (17, 'Ali', 'http://dummyimage.com/161x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (18, 'Brianne', 'http://dummyimage.com/120x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (19, 'Darb', 'http://dummyimage.com/194x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (20, 'Nessa', 'http://dummyimage.com/248x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (21, 'Urson', 'http://dummyimage.com/160x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (22, 'Martyn', 'http://dummyimage.com/219x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (23, 'Barb', 'http://dummyimage.com/247x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (24, 'Jillene', 'http://dummyimage.com/181x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (25, 'Monro', 'http://dummyimage.com/184x100.png/ff4444/ffffff');
+-- INSERT
 
 -- Endereços
 
@@ -178,6 +150,35 @@ INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, comp
 INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (23, 'Woolly Brickellbush', '2023-02-16 22:01:53', '2022-07-12 07:09:38', 74593766, 'Hill');
 INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (24, 'Plagiobryum Moss', '2022-06-21 13:01:20', '2022-06-24 11:16:10', 74593766, 'Road');
 INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (25, 'Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', 74593766, 'Lane');
+
+
+-- Usuários
+
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (1, 'Donella', 'http://dummyimage.com/193x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (2, 'Emory', 'http://dummyimage.com/214x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (3, 'Charlotta', 'http://dummyimage.com/102x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (4, 'Denyse', 'http://dummyimage.com/249x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (5, 'Ludovico', 'http://dummyimage.com/167x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (6, 'Kimberlyn', 'http://dummyimage.com/221x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (7, 'Lazaro', 'http://dummyimage.com/232x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (8, 'Jayson', 'http://dummyimage.com/228x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (9, 'Robinetta', 'http://dummyimage.com/179x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (10, 'Mychal', 'http://dummyimage.com/109x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (11, 'Arvy', 'http://dummyimage.com/223x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (12, 'Cristobal', 'http://dummyimage.com/147x100.png/5fa2dd/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (13, 'Padraic', 'http://dummyimage.com/206x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (14, 'Dominic', 'http://dummyimage.com/220x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (15, 'Munroe', 'http://dummyimage.com/170x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (16, 'Orelee', 'http://dummyimage.com/101x100.png/5fa2dd/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (17, 'Ali', 'http://dummyimage.com/161x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (18, 'Brianne', 'http://dummyimage.com/120x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (19, 'Darb', 'http://dummyimage.com/194x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (20, 'Nessa', 'http://dummyimage.com/248x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (21, 'Urson', 'http://dummyimage.com/160x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (22, 'Martyn', 'http://dummyimage.com/219x100.png/5fa2dd/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (23, 'Barb', 'http://dummyimage.com/247x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (24, 'Jillene', 'http://dummyimage.com/181x100.png/5fa2dd/ffffff');
+INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (25, 'Monro', 'http://dummyimage.com/184x100.png/ff4444/ffffff');
 
 
 -- Convidados
@@ -267,7 +268,41 @@ INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_
 INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (25, 320.0, '2023-06-01 11:46:06', 1, 5);
 
 
+-- Eventos has insumos
+
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (14, 16);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (16, 23);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (23, 16);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (23, 24);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 25);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (12, 13);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (18, 9);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (12, 19);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (7, 8);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (17, 6);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (24, 16);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (25, 20);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (20, 19);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (12, 22);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 20);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (18, 3);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 3);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (13, 11);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (25, 15);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (11, 4);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (22, 7);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (7, 4);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (14, 1);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (16, 10);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (19, 9);
+
+
+-- UPDATE 
+
+-- DELETE
+
 -- SELECT
+
 -- 	enderecos.cep, enderecos.logradouro, enderecos.bairro, enderecos.cidade, enderecos.estado, enderecos.pais,
 -- 	eventos.id_evento, evento.nome, evento.data_inicio, evento.data_fim, evento.endereços_cep, evento.complemento_endereco, 
 -- 	usuario.id_usuario, usuario.nome, usuario.foto_de_perfil_url
@@ -280,7 +315,4 @@ INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_
 -- INNER JOIN usuarios
 -- 		ON convidados.usuarios_id_usuario = usuarios.id_usuario;
 		
--- updates 
-
--- enderecos
 
