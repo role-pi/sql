@@ -1,4 +1,4 @@
-<h1 align="center">estudo-de-caso-bd3 </h1>  
+<h1 align="center">estudo-de-caso-bd3/sql </h1>  
 
 ```javascript
 this.alunos = ["Ana Clara Castellain", "João Gabriel Pozzobon dos Santos", "Maiara Junches Seemann"]
