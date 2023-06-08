@@ -180,22 +180,77 @@ insert into eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, comp
 insert into eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) values (25, 'Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', 74593766, 'Lane');
 
 
--- convidados
-SELECT
-	enderecos.cep, enderecos.logradouro, enderecos.bairro, enderecos.cidade, enderecos.estado, enderecos.pais,
-	eventos.id_evento, evento.nome, evento.data_inicio, evento.data_fim, evento.endereços_cep, evento.complemento_endereco, 
-	usuario.id_usuario, usuario.nome, usuario.foto_de_perfil_url
-	
-FROM convidados
-INNER JOIN eventos
-		ON convidados.eventos_id_evento = eventos.id_evento
-INNER JOIN enderecos
-		ON eventos.endereco_cep = enderecos.cep
-INNER JOIN usuarios
-		ON convidados.usuarios_id_usuario = usuarios.id_usuario;
+-- Convidados
+
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (1, 10);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (1, 7);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (1, 19);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (1, 3);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (1, 25);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (2, 10);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (2, 7);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (2, 19);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (2, 3);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (2, 25);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (3, 10);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (3, 7);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (3, 19);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (3, 3);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (3, 25);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (4, 10);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (4, 7);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (4, 19);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (4, 3);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (4, 25);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (5, 10);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (5, 7);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (5, 19);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (5, 3);
+insert into convidados (eventos_id_evento, usuarios_id_usuario) values (5, 25);
+
+
+-- Insumos
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (1, 2, 'Ivy', 'Hedera L.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (2, 3, 'Donner Lake Lupine', 'Lupinus sellulus Kellogg ssp. sellulus var. sellulus');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (3, 2, 'Cassia', 'Cinnamomum aromaticum Nees');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (4, 1, 'Candyleaf', 'Stevia rebaudiana (Bertoni) Bertoni');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (5, 1, 'Western White Clematis', 'Clematis ligusticifolia Nutt.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (6, 2, 'Canna', 'Canna L.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (7, 5, 'Needle Lichen', 'Chaenotheca xyloxena Nadv.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (8, 1, 'Lecidea Lichen', 'Lecidea atromarginata H. Magn.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (9, 4, 'Mandarin Lime', 'Citrus ×limonia Osbeck (pro sp.)');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (10, 1, 'Islandthicket Threeawn', 'Aristida refracta Griseb.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (11, 2, 'Diphyscium Moss', 'Diphyscium D. Mohr');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (12, 5, 'Foxtail Barley', 'Hordeum jubatum L. ssp. jubatum');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (13, 3, 'Waimea Pipturus', 'Pipturus albidus (Hook. & Arn.) A. Gray');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (14, 3, 'Broomwort', 'Scoparia montevidensis (Spreng.) R.E. Fries var. glandulifera (Fritsch) R.E. Fries');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (15, 2, 'Yellow Indian Paintbrush', 'Castilleja flava S. Watson');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (16, 2, 'Desert Evening Primrose', 'Oenothera primiveris A. Gray ssp. bufonis (M.E. Jones) Munz');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (17, 3, 'Epimedium', 'Epimedium L.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (18, 5, 'Broadleaf Rush', 'Juncus planifolius R. Br.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (19, 1, 'Woolly Sage', 'Salvia funerea M.E. Jones');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (20, 2, 'Frosted Buckwheat', 'Eriogonum incanum Torr. & A. Gray');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (21, 1, 'Bog Birch', 'Betula pumila L. var. renifolia Fernald');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (22, 1, 'Isachne', 'Isachne purpurascens Glassman');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (23, 3, 'Fendler''s Flatsedge', 'Cyperus fendlerianus Boeckeler');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (24, 5, 'Corn', 'Zea mays L.');
+INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (25, 4, 'Navajo Evening Primrose', 'Oenothera caespitosa Nutt. ssp. navajoensis W.L. Wagner, Stockhouse & Klein');
+
+
+-- SELECT
+-- 	enderecos.cep, enderecos.logradouro, enderecos.bairro, enderecos.cidade, enderecos.estado, enderecos.pais,
+-- 	eventos.id_evento, evento.nome, evento.data_inicio, evento.data_fim, evento.endereços_cep, evento.complemento_endereco, 
+-- 	usuario.id_usuario, usuario.nome, usuario.foto_de_perfil_url
+-- 	
+-- FROM convidados
+-- INNER JOIN eventos
+-- 		ON convidados.eventos_id_evento = eventos.id_evento
+-- INNER JOIN enderecos
+-- 		ON eventos.endereco_cep = enderecos.cep
+-- INNER JOIN usuarios
+-- 		ON convidados.usuarios_id_usuario = usuarios.id_usuario;
 		
 -- updates 
 
 -- enderecos
 
-UPDATE enderecos SET nome
