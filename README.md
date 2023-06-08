@@ -1,7 +1,11 @@
-<h1 align="center">estudo-de-caso-bd3/sql </h1>  
+<h1 align="center">estudo-de-caso-bd3/sql</h1>  
 
-```javascript
-this.alunos = ["Ana Clara Castellain", "João Gabriel Pozzobon dos Santos", "Maiara Junches Seemann"]
+```sql
+INSERT INTO alunos (nome)
+VALUES
+    ("Ana Clara Castellain"),
+    ("João Gabriel Pozzobon dos Santos"),
+    ("Maiara Junches Seeman");
 ```
   
 ### Descrição do banco de dados
