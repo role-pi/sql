@@ -1,4 +1,4 @@
-<h1 align="center">estudo-de-caso-bd3/sql</h1>  
+<h1 align="center">estudo-de-caso-bd/sql</h1>  
 
 ```sql
 INSERT INTO alunos (nome)
