@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `insumos` (
   `id_insumo` INT NOT NULL,
   `tipo` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
-  `descricao` VARCHAR(45) NULL,
+  `descricao` VARCHAR(120) NULL,
   PRIMARY KEY (`id_insumo`)
 );
 -- -----------------------------------------------------
@@ -210,6 +210,7 @@ INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (5, 25);
 
 
 -- Insumos
+
 INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (1, 2, 'Ivy', 'Hedera L.');
 INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (2, 3, 'Donner Lake Lupine', 'Lupinus sellulus Kellogg ssp. sellulus var. sellulus');
 INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (3, 2, 'Cassia', 'Cinnamomum aromaticum Nees');
@@ -235,6 +236,35 @@ INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (22, 1, 'Isachne',
 INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (23, 3, 'Fendler''s Flatsedge', 'Cyperus fendlerianus Boeckeler');
 INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (24, 5, 'Corn', 'Zea mays L.');
 INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (25, 4, 'Navajo Evening Primrose', 'Oenothera caespitosa Nutt. ssp. navajoensis W.L. Wagner, Stockhouse & Klein');
+
+
+-- Transações
+
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (1, 457.34, '2022-09-16 12:17:43', 2, 18);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (2, 320.09, '2022-08-03 07:54:58', 3, 8);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (3, 325.75, '2022-08-06 12:36:34', 13, 25);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (4, 10.33, '2023-03-07 15:25:31', 21, 5);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (5, 113.87, '2023-01-23 15:36:15', 13, 21);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (6, 200.38, '2022-10-06 22:50:35', 12, 5);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (7, 255.0, '2023-02-04 10:05:28', 15, 14);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (8, 339.45, '2023-04-30 02:22:52', 17, 17);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (9, 312.3, '2023-03-07 22:09:15', 17, 4);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (10, 251.27, '2022-06-27 15:08:11', 16, 20);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (11, 93.82, '2022-11-14 08:58:50', 24, 13);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (12, 85.17, '2022-11-17 19:47:20', 6, 18);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (13, 414.71, '2023-05-07 17:17:38', 13, 1);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (14, 260.51, '2022-07-10 23:48:16', 9, 24);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (15, 96.81, '2023-02-13 05:34:07', 10, 19);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (16, 233.84, '2023-02-14 18:42:52', 25, 1);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (17, 133.34, '2023-04-20 20:11:54', 7, 8);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (18, 88.73, '2023-01-30 17:16:51', 14, 7);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (19, 214.66, '2023-05-26 15:34:32', 2, 5);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (20, 391.03, '2022-07-08 01:41:55', 24, 18);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (21, 227.34, '2022-08-31 07:31:29', 2, 12);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (22, 251.28, '2023-01-11 16:17:14', 9, 1);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (23, 224.15, '2022-12-08 03:21:18', 8, 17);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (24, 122.14, '2022-12-05 07:46:10', 7, 16);
+INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (25, 320.0, '2023-06-01 11:46:06', 1, 5);
 
 
 -- SELECT
