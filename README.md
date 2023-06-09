@@ -5,7 +5,7 @@ INSERT INTO alunos (nome)
 VALUES
     ("Ana Clara Castellain"),
     ("João Gabriel Pozzobon dos Santos"),
-    ("Maiara Junches Seeman");
+    ("Maiara Junches Seemann");
 ```
   
 ### Descrição do banco de dados
