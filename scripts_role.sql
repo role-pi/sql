@@ -330,6 +330,8 @@ FROM
         INNER JOIN
     usuarios ON transacoes.usuarios_id_usuario = usuarios.id_usuario
         INNER JOIN
-    insumos ON transacoes.insumos_id_insumo = insumos.id_insumo;
+    insumos ON transacoes.insumos_id_insumo = insumos.id_insumo
+ORDER BY
+	insumos.tipo;
 		
 
