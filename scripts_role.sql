@@ -179,31 +179,31 @@ INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (25, 'Monro',
 
 -- Eventos has usuarios
 
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 10);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 7);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 1);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 2);
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 3);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 25);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 10);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 7);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 4);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 5);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 1);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 2);
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 3);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 25);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 10);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 7);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 4);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 5);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 1);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 2);
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 3);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 25);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 10);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 7);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 4);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 5);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 1);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 2);
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 3);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 25);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 10);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 7);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 4);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 5);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 1);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 2);
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 3);
-INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 25);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 4);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 5);
 
 
 -- Insumos
