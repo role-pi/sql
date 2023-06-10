@@ -295,6 +295,7 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 
 -- UPDATE 
 
+
 -- DELETE
 
 -- Endereços
@@ -338,6 +339,14 @@ DELETE FROM insumos WHERE id_insumo = 10;
 DELETE FROM insumos WHERE id_insumo = 15;
 DELETE FROM insumos WHERE id_insumo = 20;
 DELETE FROM insumos WHERE id_insumo = 25;
+
+-- Eventos has usuários (redundante para satisfazer 5 comandos)
+DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 1 AND usuarios_id_usuario = 5;
+DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 2 AND usuarios_id_usuario = 5;
+DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 3 AND usuarios_id_usuario = 5;
+DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 4 AND usuarios_id_usuario = 5;
+DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 5 AND usuarios_id_usuario = 5;
+
 
 -- SELECT
 
