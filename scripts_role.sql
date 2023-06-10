@@ -299,6 +299,27 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 
 -- SELECT
 
+-- SELECT COUNT
+SELECT COUNT(*) FROM enderecos;
+SELECT COUNT(*) FROM eventos;
+SELECT COUNT(*) FROM usuarios;
+SELECT COUNT(*) FROM insumos;
+SELECT COUNT(*) FROM transacoes;
+SELECT COUNT(*) FROM eventos_has_insumos;
+SELECT COUNT(*) FROM eventos_has_usuarios;
+
+-- SELECT ALL
+SELECT * FROM enderecos ORDER BY cep;
+SELECT * FROM eventos ORDER BY id_evento;
+SELECT * FROM usuarios ORDER BY id_usuario;
+SELECT * FROM insumos ORDER BY id_insumo;
+SELECT * FROM transacoes ORDER BY id_transacao;
+SELECT * FROM eventos_has_insumos ORDER BY eventos_id_evento;
+SELECT * FROM eventos_has_usuarios ORDER BY eventos_id_evento;
+
+-- SELECT JOIN
+
+
 -- 	enderecos.cep, enderecos.logradouro, enderecos.bairro, enderecos.cidade, enderecos.estado, enderecos.pais,
 -- 	eventos.id_evento, evento.nome, evento.data_inicio, evento.data_fim, evento.endereços_cep, evento.complemento_endereco, 
 -- 	usuario.id_usuario, usuario.nome, usuario.foto_de_perfil_url
