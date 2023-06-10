@@ -297,6 +297,48 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 
 -- DELETE
 
+-- Endereços
+DELETE FROM enderecos WHERE cep = 30523723;
+DELETE FROM enderecos WHERE cep = 24511114;
+DELETE FROM enderecos WHERE cep = 52913607;
+DELETE FROM enderecos WHERE cep = 29212462;
+DELETE FROM enderecos WHERE cep = 36803847;
+
+-- Eventos
+DELETE FROM eventos WHERE id_evento = 21;
+DELETE FROM eventos WHERE id_evento = 22;
+DELETE FROM eventos WHERE id_evento = 23;
+DELETE FROM eventos WHERE id_evento = 24;
+DELETE FROM eventos WHERE id_evento = 25;
+
+-- Usuários
+DELETE FROM usuarios WHERE id_usuario = 21;
+DELETE FROM usuarios WHERE id_usuario = 22;
+DELETE FROM usuarios WHERE id_usuario = 23;
+DELETE FROM usuarios WHERE id_usuario = 24;
+DELETE FROM usuarios WHERE id_usuario = 25;
+
+-- Eventos has insumos
+DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 5;
+DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 10;
+DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 15;
+DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 20;
+DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 25;
+
+-- Transações
+DELETE FROM transacoes WHERE id_transacao = 5;
+DELETE FROM transacoes WHERE id_transacao = 10;
+DELETE FROM transacoes WHERE id_transacao = 15;
+DELETE FROM transacoes WHERE id_transacao = 20;
+DELETE FROM transacoes WHERE id_transacao = 25;
+
+-- Insumos
+DELETE FROM insumos WHERE id_insumo = 5;
+DELETE FROM insumos WHERE id_insumo = 10;
+DELETE FROM insumos WHERE id_insumo = 15;
+DELETE FROM insumos WHERE id_insumo = 20;
+DELETE FROM insumos WHERE id_insumo = 25;
+
 -- SELECT
 
 -- SELECT COUNT
