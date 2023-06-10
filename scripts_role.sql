@@ -266,31 +266,31 @@ INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_
 
 -- Eventos has insumos
 
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (14, 16);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (16, 23);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (23, 16);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (23, 24);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 25);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (12, 13);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (18, 9);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (12, 19);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (7, 8);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (17, 6);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (24, 16);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (25, 20);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (20, 19);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (12, 22);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 20);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (18, 3);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 3);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (13, 11);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (25, 15);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (11, 4);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (22, 7);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (7, 4);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (14, 1);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (16, 10);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (19, 9);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 1);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 2);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 3);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 4);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 5);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 6);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 7);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 8);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 9);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 10);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 11);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 12);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 13);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 14);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 15);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 16);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 17);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 18);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 19);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 20);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 21);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 22);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 23);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 24);
+INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 25);
 
 
 -- UPDATE 
