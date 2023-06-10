@@ -42,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id_usuario`)
 );
 -- -----------------------------------------------------
--- Table `convidados`
+-- Table `eventos_has_usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `convidados` (
+CREATE TABLE IF NOT EXISTS `eventos_has_usuarios` (
   `eventos_id_evento` INT NOT NULL,
   `usuarios_id_usuario` INT NOT NULL,
   PRIMARY KEY (`eventos_id_evento`, `usuarios_id_usuario`),
@@ -71,11 +71,7 @@ CREATE TABLE IF NOT EXISTS `transacoes` (
   `data` TIMESTAMP NOT NULL,
   `usuarios_id_usuario` INT NOT NULL,
   `insumos_id_insumo` INT NOT NULL,
-  PRIMARY KEY (
-    `id_transacao`,
-    `usuarios_id_usuario`,
-    `insumos_id_insumo`
-  ),
+  PRIMARY KEY (`id_transacao`),
   CONSTRAINT `fk_transacoes_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) ,
   CONSTRAINT `fk_transacoes_insumos1` FOREIGN KEY (`insumos_id_insumo`) REFERENCES `insumos` (`id_insumo`) 
 );
@@ -181,33 +177,33 @@ INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (24, 'Jillene
 INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (25, 'Monro', 'http://dummyimage.com/184x100.png/ff4444/ffffff');
 
 
--- Convidados
+-- Eventos has usuarios
 
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (1, 10);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (1, 7);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (1, 19);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (1, 3);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (1, 25);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (2, 10);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (2, 7);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (2, 19);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (2, 3);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (2, 25);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (3, 10);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (3, 7);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (3, 19);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (3, 3);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (3, 25);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (4, 10);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (4, 7);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (4, 19);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (4, 3);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (4, 25);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (5, 10);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (5, 7);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (5, 19);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (5, 3);
-INSERT INTO convidados (eventos_id_evento, usuarios_id_usuario) VALUES (5, 25);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 10);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 7);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 3);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 25);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 10);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 7);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 3);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (2, 25);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 10);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 7);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 3);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (3, 25);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 10);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 7);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 3);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (4, 25);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 10);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 7);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 19);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 3);
+INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 25);
 
 
 -- Insumos
@@ -307,12 +303,12 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1
 -- 	eventos.id_evento, evento.nome, evento.data_inicio, evento.data_fim, evento.endereços_cep, evento.complemento_endereco, 
 -- 	usuario.id_usuario, usuario.nome, usuario.foto_de_perfil_url
 -- 	
--- FROM convidados
+-- FROM eventos_has_usuarios
 -- INNER JOIN eventos
--- 		ON convidados.eventos_id_evento = eventos.id_evento
+-- 		ON eventos_has_usuarios.eventos_id_evento = eventos.id_evento
 -- INNER JOIN enderecos
 -- 		ON eventos.endereco_cep = enderecos.cep
 -- INNER JOIN usuarios
--- 		ON convidados.usuarios_id_usuario = usuarios.id_usuario;
+-- 		ON eventos_has_usuarios.usuarios_id_usuario = usuarios.id_usuario;
 		
 
