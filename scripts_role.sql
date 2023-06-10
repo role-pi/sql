@@ -318,18 +318,18 @@ SELECT * FROM eventos_has_insumos ORDER BY eventos_id_evento;
 SELECT * FROM eventos_has_usuarios ORDER BY eventos_id_evento;
 
 -- SELECT JOIN
-
-
--- 	enderecos.cep, enderecos.logradouro, enderecos.bairro, enderecos.cidade, enderecos.estado, enderecos.pais,
--- 	eventos.id_evento, evento.nome, evento.data_inicio, evento.data_fim, evento.endereços_cep, evento.complemento_endereco, 
--- 	usuario.id_usuario, usuario.nome, usuario.foto_de_perfil_url
--- 	
--- FROM eventos_has_usuarios
--- INNER JOIN eventos
--- 		ON eventos_has_usuarios.eventos_id_evento = eventos.id_evento
--- INNER JOIN enderecos
--- 		ON eventos.endereco_cep = enderecos.cep
--- INNER JOIN usuarios
--- 		ON eventos_has_usuarios.usuarios_id_usuario = usuarios.id_usuario;
+SELECT 
+    insumos.tipo AS tipo_insumo,
+    insumos.nome AS nome_insumo,
+    insumos.descricao AS descricao_insumo,
+    transacoes.valor AS valor_transacao,
+    transacoes.data AS data_transacao,
+    usuarios.nome AS nome_usuario
+FROM
+    transacoes
+        INNER JOIN
+    usuarios ON transacoes.usuarios_id_usuario = usuarios.id_usuario
+        INNER JOIN
+    insumos ON transacoes.insumos_id_insumo = insumos.id_insumo;
 		
 
