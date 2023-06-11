@@ -310,6 +310,10 @@ UPDATE transacoes SET valor = 100.00, data = '2022-11-17 15:33:00' WHERE id_tran
 -- Insumos
 UPDATE insumos SET tipo = 3, nome = 'Canwes Lincon' WHERE id_insumo = 3;
 UPDATE insumos SET tipo = 2, nome = 'Darslen Needly' WHERE id_insumo = 7;
+UPDATE insumos SET tipo = 4, nome = 'Ivy Lin' WHERE id_insumo = 10;
+UPDATE insumos SET tipo = 1, nome = 'Broomwort' WHERE id_insumo = 13;
+UPDATE insumos SET tipo = 5, nome = 'Corns  dogy' WHERE id_insumo = 25;
+
 -- DELETE
 
 -- Endereços
