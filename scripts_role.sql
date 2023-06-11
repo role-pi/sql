@@ -326,7 +326,8 @@ UPDATE usuarios SET nome = 'Dminyc' WHERE id_usuario = 14;
 UPDATE usuarios SET nome = 'Britany' WHERE id_usuario = 18;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/200x100.png/cc0000/ffffff' WHERE id_usuario = 10;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/240x100.png/cc0000/ffffff' WHERE id_usuario = 17;
-
+UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/126x100.png/cc0000/ffffff' WHERE id_usuario = 2;
+UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/115x100.png/cc0000/ffffff' WHERE id_usuario = 4;
 -- DELETE
 
 -- Endereços
