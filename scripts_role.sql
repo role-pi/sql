@@ -323,7 +323,33 @@ UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/126x100.png/cc00
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/115x100.png/cc0000/ffffff' WHERE id_usuario = 4;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/237x100.png/cc0000/ffffff' WHERE id_usuario = 24;
 
+--Enderecos
+UPDATE enderecos SET nome = 'Charlotte' WHERE id_usuario = 3;
+UPDATE enderecos SET nome = 'Donatella' WHERE id_usuario = 1;
+UPDATE enderecos SET nome = 'Ludovics' WHERE id_usuario = 5;
+UPDATE enderecos SET nome = 'Dminyc' WHERE id_usuario = 14;
+UPDATE enderecos SET nome = 'Britany' WHERE id_usuario = 18;
+UPDATE enderecos SET nome = 'Charlotte' WHERE id_usuario = 3;
+UPDATE enderecos SET nome = 'Donatella' WHERE id_usuario = 1;
+UPDATE enderecos SET nome = 'Ludovics' WHERE id_usuario = 5;
+UPDATE enderecos SET nome = 'Dminyc' WHERE id_usuario = 14;
+UPDATE enderecos SET nome = 'Britany' WHERE id_usuario = 18;
+UPDATE enderecos SET nome = 'Dminyc' WHERE id_usuario = 14;
+UPDATE enderecos SET nome = 'Britany' WHERE id_usuario = 18;
 
+--Evento
+UPDATE eventos SET nome = 'Charlotte' WHERE id_usuario = 3;
+UPDATE eventos SET nome = 'Donatella' WHERE id_usuario = 1;
+UPDATE eventos SET nome = 'Ludovics' WHERE id_usuario = 5;
+UPDATE eventos SET nome = 'Dminyc' WHERE id_usuario = 14;
+UPDATE eventos SET nome = 'Britany' WHERE id_usuario = 18;
+UPDATE eventos SET nome = 'Charlotte' WHERE id_usuario = 3;
+UPDATE eventos SET nome = 'Donatella' WHERE id_usuario = 1;
+UPDATE eventos SET nome = 'Ludovics' WHERE id_usuario = 5;
+UPDATE eventos SET nome = 'Dminyc' WHERE id_usuario = 14;
+UPDATE eventos SET nome = 'Britany' WHERE id_usuario = 18;
+UPDATE eventos SET nome = 'Dminyc' WHERE id_usuario = 14;
+UPDATE eventos SET nome = 'Britany' WHERE id_usuario = 18;
 
 -- DELETE
 
