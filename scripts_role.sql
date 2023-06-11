@@ -323,6 +323,9 @@ UPDATE usuarios SET nome = 'Charlotte' WHERE id_usuario = 3;
 UPDATE usuarios SET nome = 'Donatella' WHERE id_usuario = 1;
 UPDATE usuarios SET nome = 'Ludovics' WHERE id_usuario = 5;
 UPDATE usuarios SET nome = 'Dminyc' WHERE id_usuario = 14;
+UPDATE usuarios SET nome = 'Britany' WHERE id_usuario = 18;
+
+
 -- DELETE
 
 -- Endereços
