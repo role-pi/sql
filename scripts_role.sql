@@ -296,7 +296,9 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 -- UPDATE 
 UPDATE transacoes SET valor = 554.43, data = '2023-01-15 14:27:43' WHERE id_transacao = 1;
 UPDATE transacoes SET valor = 45.45 , data = '2020-12-23 06:26:55' WHERE id_transacao = 5;
-
+UPDATE transacoes SET valor = 04.27, data = '2022-05-30 12:30:00' WHERE id_transacao = 22;
+UPDATE transacoes SET valor = 700.40 , data = '2020-12-23 16:14:44' WHERE id_transacao = 13;
+UPDATE transacoes SET valor = 60.00 , data = '2022-15-24 18:30:16' WHERE id_transacao = 19;
 
 -- DELETE
 
