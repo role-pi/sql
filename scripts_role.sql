@@ -324,7 +324,8 @@ UPDATE usuarios SET nome = 'Donatella' WHERE id_usuario = 1;
 UPDATE usuarios SET nome = 'Ludovics' WHERE id_usuario = 5;
 UPDATE usuarios SET nome = 'Dminyc' WHERE id_usuario = 14;
 UPDATE usuarios SET nome = 'Britany' WHERE id_usuario = 18;
-
+UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/200x100.png/cc0000/ffffff' WHERE id_usuario = 10;
+UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/240x100.png/cc0000/ffffff' WHERE id_usuario = 17;
 
 -- DELETE
 
