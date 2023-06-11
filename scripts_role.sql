@@ -318,6 +318,9 @@ UPDATE insumos SET tipo = 5, nome = 'Issac King' WHERE id_insumo = 5;
 UPDATE insumos SET tipo = 1, nome = 'Pinters Onw' WHERE id_insumo = 18;
 UPDATE insumos SET tipo = 3, nome = 'Poplolli Little' WHERE id_insumo = 1;
 
+--Usuarios
+UPDATE usuarios SET nome = 'Charlotte' WHERE id_usuario = 3;
+UPDATE usuarios SET nome = 'Donatella' WHERE id_usuario = 1;
 -- DELETE
 
 -- Endereços
