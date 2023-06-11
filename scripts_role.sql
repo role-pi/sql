@@ -313,6 +313,10 @@ UPDATE insumos SET tipo = 2, nome = 'Darslen Needly' WHERE id_insumo = 7;
 UPDATE insumos SET tipo = 4, nome = 'Ivy Lin' WHERE id_insumo = 10;
 UPDATE insumos SET tipo = 1, nome = 'Broomwort' WHERE id_insumo = 13;
 UPDATE insumos SET tipo = 5, nome = 'Corns  dogy' WHERE id_insumo = 25;
+UPDATE insumos SET tipo = 2, nome = 'Waimea Pipturus' WHERE id_insumo = 14;
+UPDATE insumos SET tipo = 5, nome = 'Issac King' WHERE id_insumo = 5;
+UPDATE insumos SET tipo = 1, nome = 'Pinters Onw' WHERE id_insumo = 18;
+UPDATE insumos SET tipo = 3, nome = 'Poplolli Little' WHERE id_insumo = 1;
 
 -- DELETE
 
