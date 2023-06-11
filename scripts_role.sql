@@ -51,7 +51,6 @@ CREATE TABLE IF NOT EXISTS `eventos_has_usuarios` (
   CONSTRAINT `fk_eventos_has_usuarios_eventos` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`) ,
   CONSTRAINT `fk_eventos_has_usuarios_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) 
 );
-
 -- -----------------------------------------------------
 -- Table `insumos`
 -- -----------------------------------------------------
@@ -75,7 +74,6 @@ CREATE TABLE IF NOT EXISTS `transacoes` (
   CONSTRAINT `fk_transacoes_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) ,
   CONSTRAINT `fk_transacoes_insumos1` FOREIGN KEY (`insumos_id_insumo`) REFERENCES `insumos` (`id_insumo`) 
 );
-
 -- -----------------------------------------------------
 -- Table `eventos_has_insumos`
 -- -----------------------------------------------------
@@ -86,7 +84,6 @@ CREATE TABLE IF NOT EXISTS `eventos_has_insumos` (
   CONSTRAINT `fk_eventos_has_insumos_eventos1` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`) ,
   CONSTRAINT `fk_eventos_has_insumos_insumos1` FOREIGN KEY (`insumos_id_insumo`) REFERENCES `insumos` (`id_insumo`) 
 );
-
 
 -- INSERT
 
@@ -118,7 +115,6 @@ INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (5
 INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (29212462, 'Judy', 'Pierstorff', 'Saint Augustine', 'Florida', 'United States');
 INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (36803847, 'Longview', 'Mcguire', 'Birmingham', 'Alabama', 'United States');
 
-
 -- Eventos
 
 INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (1, 'Bolander''s Yampah', '2022-09-22 18:55:22', '2023-01-08 09:01:29', 74593766, 'Hill');
@@ -146,7 +142,6 @@ INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, comp
 INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (23, 'Woolly Brickellbush', '2023-02-16 22:01:53', '2022-07-12 07:09:38', 74593766, 'Hill');
 INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (24, 'Plagiobryum Moss', '2022-06-21 13:01:20', '2022-06-24 11:16:10', 74593766, 'Road');
 INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (25, 'Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', 74593766, 'Lane');
-
 
 -- Usuários
 
@@ -176,7 +171,6 @@ INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (23, 'Barb', 
 INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (24, 'Jillene', 'http://dummyimage.com/181x100.png/5fa2dd/ffffff');
 INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (25, 'Monro', 'http://dummyimage.com/184x100.png/ff4444/ffffff');
 
-
 -- Eventos has usuarios
 
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 1);
@@ -204,7 +198,6 @@ INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 3);
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 4);
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (5, 5);
-
 
 -- Insumos
 
@@ -234,7 +227,6 @@ INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (23, 3, 'Fendler''
 INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (24, 5, 'Corn', 'Zea mays L.');
 INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (25, 4, 'Navajo Evening Primrose', 'Oenothera caespitosa Nutt. ssp. navajoensis W.L. Wagner, Stockhouse & Klein');
 
-
 -- Transações
 
 INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (1, 457.34, '2022-09-16 12:17:43', 1, 1);
@@ -263,7 +255,6 @@ INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_
 INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (24, 122.14, '2022-12-05 07:46:10', 4, 24);
 INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (25, 320.0, '2023-06-01 11:46:06', 5, 25);
 
-
 -- Eventos has insumos
 
 INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 1);
@@ -291,6 +282,7 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 23);
 INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 24);
 INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 25);
+
 
 
 -- UPDATE 
@@ -330,6 +322,8 @@ UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/240x100.png/cc00
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/126x100.png/cc0000/ffffff' WHERE id_usuario = 2;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/115x100.png/cc0000/ffffff' WHERE id_usuario = 4;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/237x100.png/cc0000/ffffff' WHERE id_usuario = 24;
+
+
 
 -- DELETE
 
@@ -381,6 +375,8 @@ DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 2 AND usuarios_id_usu
 DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 3 AND usuarios_id_usuario = 5;
 DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 4 AND usuarios_id_usuario = 5;
 DELETE FROM eventos_has_usuarios WHERE eventos_id_evento = 5 AND usuarios_id_usuario = 5;
+
+
 
 
 -- SELECT
