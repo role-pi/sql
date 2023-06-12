@@ -171,7 +171,7 @@ INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (23, 'Barb', 
 INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (24, 'Jillene', 'http://dummyimage.com/181x100.png/5fa2dd/ffffff');
 INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (25, 'Monro', 'http://dummyimage.com/184x100.png/ff4444/ffffff');
 
--- Eventos has usuarios
+-- Eventos has usuários
 
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 1);
 INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES (1, 2);
@@ -287,7 +287,7 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 
 -- UPDATE 
 
--- Enderecos
+-- Endereços
 UPDATE enderecos SET cep = 57183222, logradouro = 'Elgar', bairro = 'Steensland', cidade = 'Oklahoma City', estado = 'Oklahoma', país = 'United States' WHERE id_cep = 3;
 UPDATE enderecos SET cep = 16451100, logradouro = 'Monterey', bairro =  'Farwell', cidade =  'Nashville', estado = 'Tennessee', país = 'United States' WHERE id_cep = 1;
 UPDATE enderecos SET cep = 98887714, logradouro = 'Scoville', bairro = 'Pearson', cidade = 'Beaufort', estado = 'South Carolina', país = 'United States' WHERE id_cep = 5;
@@ -313,7 +313,7 @@ UPDATE eventos SET nome = 'Woolly Brickellbush', data_inicio = '2023-02-16 22:01
 UPDATE eventos SET nome = 'Plagiobryum Moss', data_inicio = '2022-06-21 13:01:20', data_fim = '2022-06-24 11:16:10', enderecos_cep = 74593766, complemento_endereco = 'Road' WHERE id_evento = 14;
 UPDATE eventos SET nome = 'Henbane', data_inicio = '2023-04-19 22:30:47', data_fim = '2022-06-01 18:48:44', enderecos_cep = 74593766, complemento_endereco = 'Lane' WHERE id_evento = 18;
 
--- Transacoes
+-- Transações
 UPDATE transacoes SET valor = 554.43, data = '2023-01-15 14:27:43' WHERE id_transacao = 1;
 UPDATE transacoes SET valor = 45.45, data = '2020-12-23 06:26:55' WHERE id_transacao = 5; 
 UPDATE transacoes SET valor = 04.27, data = '2022-05-30 12:30:00' WHERE id_transacao = 22; 
@@ -336,7 +336,7 @@ UPDATE insumos SET tipo = 5, nome = 'Issac King' WHERE id_insumo = 5;
 UPDATE insumos SET tipo = 1, nome = 'Pinters Onw' WHERE id_insumo = 18;
 UPDATE insumos SET tipo = 3, nome = 'Poplolli Little' WHERE id_insumo = 1;
 
--- Usuarios
+-- Usuários
 UPDATE usuarios SET nome = 'Charlotte' WHERE id_usuario = 3;
 UPDATE usuarios SET nome = 'Donatella' WHERE id_usuario = 1;
 UPDATE usuarios SET nome = 'Ludovics' WHERE id_usuario = 5;
@@ -348,6 +348,7 @@ UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/240x100.png/cc00
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/126x100.png/cc0000/ffffff' WHERE id_usuario = 2;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/115x100.png/cc0000/ffffff' WHERE id_usuario = 4;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/237x100.png/cc0000/ffffff' WHERE id_usuario = 24;
+
 
 -- DELETE
 
