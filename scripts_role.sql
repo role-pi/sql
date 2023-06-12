@@ -284,41 +284,38 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 25);
 
 
-
--- UPDATE 
+-- UPDATE
 
 -- Endereços
-UPDATE enderecos SET cep = 57183222, logradouro = 'Elgar', bairro = 'Steensland', cidade = 'Oklahoma City', estado = 'Oklahoma', país = 'United States' WHERE id_cep = 3;
-UPDATE enderecos SET cep = 16451100, logradouro = 'Monterey', bairro =  'Farwell', cidade =  'Nashville', estado = 'Tennessee', país = 'United States' WHERE id_cep = 1;
-UPDATE enderecos SET cep = 98887714, logradouro = 'Scoville', bairro = 'Pearson', cidade = 'Beaufort', estado = 'South Carolina', país = 'United States' WHERE id_cep = 5;
-UPDATE enderecos SET cep = 46460967, logradouro = 'Maple', bairro = 'Pond', cidade = 'Albany', estado = 'New York', país = 'United States' WHERE id_cep = 14;
-UPDATE enderecos SET cep = 48628173, logradouro = 'Butternut', bairro = 'Grim', cidade = 'Orlando', estado = 'Florida', país = 'United States'  WHERE id_cep = 18;
-UPDATE enderecos SET cep = 32678411, logradouro = 'Brentwood', bairro = 'Clove', cidade = 'Memphis', estado = 'Tennessee', país = 'United States' WHERE id_cep = 3;
-UPDATE enderecos SET cep = 26007116, logradouro = 'Meadow Valley', bairro = 'Texas', cidade = 'Tucson', estado = 'Arizona', país = 'United States' WHERE id_cep = 1;
-UPDATE enderecos SET cep = 30523723, logradouro = 'Spohn', bairro =  'Golden Leaf', cidade = 'Kansas City', estado = 'Missouri', país = 'United States' WHERE id_cep = 5;
-UPDATE enderecos SET cep = 29212462, logradouro = 'Judy', bairro =  'Pierstorff', cidade =  'Saint Augustine', estado = 'Florida', país = 'United States' WHERE id_cep = 14;
-UPDATE enderecos SET cep = 29212462, logradouro = 'Judy', bairro = 'Pierstorff', cidade = 'Saint Augustine', estado = 'Florida', país = 'United States' WHERE id_cep = 18;
+UPDATE enderecos SET logradouro = 'Elgar', bairro = 'Steensland', cidade = 'Oklahoma City', estado = 'Oklahoma', país = 'United States' WHERE cep = 74593766;
+UPDATE enderecos SET logradouro = 'Monterey', bairro =  'Farwell', cidade =  'Nashville', estado = 'Tennessee', país = 'United States' WHERE cep = 93223589;
+UPDATE enderecos SET logradouro = 'Scoville', bairro = 'Pearson', cidade = 'Beaufort', estado = 'South Carolina', país = 'United States' WHERE cep = 53081891;
+UPDATE enderecos SET logradouro = 'Maple', bairro = 'Pond', cidade = 'Albany', estado = 'New York', país = 'United States' WHERE cep = 61110426;
+UPDATE enderecos SET logradouro = 'Butternut', bairro = 'Grim', cidade = 'Orlando', estado = 'Florida', país = 'United States'  WHERE cep = 23401390;
+UPDATE enderecos SET logradouro = 'Brentwood', bairro = 'Clove', cidade = 'Memphis', estado = 'Tennessee', país = 'United States' WHERE cep = 36709009;
+UPDATE enderecos SET logradouro = 'Meadow Valley', bairro = 'Texas', cidade = 'Tucson', estado = 'Arizona', país = 'United States' WHERE cep = 10964764;
+UPDATE enderecos SET logradouro = 'Spohn', bairro =  'Golden Leaf', cidade = 'Kansas City', estado = 'Missouri', país = 'United States' WHERE cep = 91238710;
+UPDATE enderecos SET logradouro = 'Judy', bairro =  'Pierstorff', cidade =  'Saint Augustine', estado = 'Florida', país = 'United States' WHERE cep = 36151819;
+UPDATE enderecos SET logradouro = 'Judy', bairro = 'Pierstorff', cidade = 'Saint Augustine', estado = 'Florida', país = 'United States' WHERE cep = 41962435;
 
 -- Evento
-UPDATE eventos SET nome = 'Berg''s Hedgenettle', data_inicio = '2023-03-12 21:50:09', data_fim = '2023-03-19 21:44:29', enderecos_cep = 74593766, complemento_endereco = 'Parkway' WHERE id_evento = 5;
-UPDATE eventos SET nome = 'Buddlejaleaf Viburnum', data_inicio =  '2022-10-25 22:07:36', data_fim = '2022-11-27 13:12:19', enderecos_cep = 74593766, complemento_endereco = 'Junction' WHERE id_evento = 14;
-UPDATE eventos SET nome = 'Carolina Oatgrass', data_inicio = '2023-01-30 20:01:38', data_fim = '2022-12-09 06:47:49', enderecos_cep = 74593766, complemento_endereco = 'Trail' WHERE id_evento = 18;
-UPDATE eventos SET nome = 'Hairy Nightshade', data_inicio = '2022-09-29 23:31:23', data_fim = '2022-10-26 01:43:16', enderecos_cep = 74593766, complemento_endereco = 'Hill' WHERE id_evento = 3;
-UPDATE eventos SET nome = 'Cleft Phlox', data_inicio = '2022-08-09 03:02:11', data_fim = '2022-11-11 17:20:25', enderecos_cep = 74593766, complemento_endereco = 'Road' WHERE id_evento = 1;
-UPDATE eventos SET nome = 'Ross'' Avens', data_inicio = '2022-07-04 14:21:32', data_fim = '2022-06-21 00:05:10', enderecos_cep = 74593766, complemento_endereco = 'Lane' WHERE id_evento = 5;
-UPDATE eventos SET nome = 'Longleaf False Goldeneye', data_inicio = '2022-06-08 12:01:23', data_fim = '2022-08-17 15:58:16', enderecos_cep = 74593766, complemento_endereco = 'Court' WHERE id_evento = 5;
-UPDATE eventos SET nome = 'Welsh''s Bugseed', data_inicio = '2022-06-03 16:55:02', data_fim = '2023-02-08 02:21:41', enderecos_cep = 74593766, complemento_endereco = 'Terrace' WHERE id_evento = 5;
-UPDATE eventos SET nome = 'Red Grama', data_inicio = '2023-03-02 16:46:42', data_fim = '2022-06-05 00:40:39', enderecos_cep = 74593766, complemento_endereco = 'Parkway' WHERE id_evento = 14;
-UPDATE eventos SET nome = 'Woolly Brickellbush', data_inicio = '2023-02-16 22:01:53', data_fim = '2022-07-12 07:09:38', enderecos_cep = 74593766, complemento_endereco = 'Hill' = 18;
-UPDATE eventos SET nome = 'Plagiobryum Moss', data_inicio = '2022-06-21 13:01:20', data_fim = '2022-06-24 11:16:10', enderecos_cep = 74593766, complemento_endereco = 'Road' WHERE id_evento = 14;
-UPDATE eventos SET nome = 'Henbane', data_inicio = '2023-04-19 22:30:47', data_fim = '2022-06-01 18:48:44', enderecos_cep = 74593766, complemento_endereco = 'Lane' WHERE id_evento = 18;
+UPDATE eventos SET nome = 'Berg''s Hedgenettle', data_inicio = '2023-03-12 21:50:09', data_fim = '2023-03-19 21:44:29', enderecos_cep = 74593766, complemento_endereco = 'Parkway' WHERE id_evento = 1;
+UPDATE eventos SET nome = 'Buddlejaleaf Viburnum', data_inicio =  '2022-10-25 22:07:36', data_fim = '2022-11-27 13:12:19', enderecos_cep = 93223589, complemento_endereco = 'Junction' WHERE id_evento = 2;
+UPDATE eventos SET nome = 'Carolina Oatgrass', data_inicio = '2023-01-30 20:01:38', data_fim = '2022-12-09 06:47:49', enderecos_cep = 53081891, complemento_endereco = 'Trail' WHERE id_evento = 3;
+UPDATE eventos SET nome = 'Hairy Nightshade', data_inicio = '2022-09-29 23:31:23', data_fim = '2022-10-26 01:43:16', enderecos_cep = 61110426, complemento_endereco = 'Hill' WHERE id_evento = 4;
+UPDATE eventos SET nome = 'Cleft Phlox', data_inicio = '2022-08-09 03:02:11', data_fim = '2022-11-11 17:20:25', enderecos_cep = 23401390, complemento_endereco = 'Road' WHERE id_evento = 5;
+UPDATE eventos SET nome = 'Ross'' Avens', data_inicio = '2022-07-04 14:21:32', data_fim = '2022-06-21 00:05:10', enderecos_cep = 36709009, complemento_endereco = 'Lane' WHERE id_evento = 6;
+UPDATE eventos SET nome = 'Longleaf False Goldeneye', data_inicio = '2022-06-08 12:01:23', data_fim = '2022-08-17 15:58:16', enderecos_cep = 10964764, complemento_endereco = 'Court' WHERE id_evento = 7;
+UPDATE eventos SET nome = 'Welsh''s Bugseed', data_inicio = '2022-06-03 16:55:02', data_fim = '2023-02-08 02:21:41', enderecos_cep = 91238710, complemento_endereco = 'Terrace' WHERE id_evento = 8;
+UPDATE eventos SET nome = 'Red Grama', data_inicio = '2023-03-02 16:46:42', data_fim = '2022-06-05 00:40:39', enderecos_cep = 36151819, complemento_endereco = 'Parkway' WHERE id_evento = 9;
+UPDATE eventos SET nome = 'Woolly Brickellbush', data_inicio = '2023-02-16 22:01:53', data_fim = '2022-07-12 07:09:38', enderecos_cep = 41962435, complemento_endereco = 'Hill' WHERE id_evento = 10;
 
 -- Transações
 UPDATE transacoes SET valor = 554.43, data = '2023-01-15 14:27:43' WHERE id_transacao = 1;
 UPDATE transacoes SET valor = 45.45, data = '2020-12-23 06:26:55' WHERE id_transacao = 5; 
 UPDATE transacoes SET valor = 04.27, data = '2022-05-30 12:30:00' WHERE id_transacao = 22; 
 UPDATE transacoes SET valor = 700.40, data = '2020-12-23 16:14:44' WHERE id_transacao = 13;
-UPDATE transacoes SET valor = 60.00, data = '2022-15-24 18:30:16' WHERE id_transacao = 19;
+UPDATE transacoes SET valor = 60.00, data = '2022-06-24 18:30:16' WHERE id_transacao = 19;
 UPDATE transacoes SET valor = 26.00, data = '2023-10-14 15:34:20' WHERE id_transacao = 8;
 UPDATE transacoes SET valor = 300.00, data = '2023-06-27 12:30:00' WHERE id_transacao = 7;
 UPDATE transacoes SET valor = 455.60, data = '2023-03-16 09:44:00' WHERE id_transacao = 16;
@@ -439,5 +436,3 @@ FROM
     insumos ON transacoes.insumos_id_insumo = insumos.id_insumo
 ORDER BY
 	insumos.tipo;
-		
-
