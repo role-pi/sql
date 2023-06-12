@@ -288,8 +288,8 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 -- UPDATE 
 
 --Enderecos
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET cep = 'Charlotte' WHERE id_cep = 3;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET cep = 'Donatella' WHERE id_cep = 1;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (57183222, 'Elgar', 'Steensland', 'Oklahoma City', 'Oklahoma', 'United States') WHERE id_cep = 3;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (16451100, 'Monterey', 'Farwell', 'Nashville', 'Tennessee', 'United States') WHERE id_cep = 1;
 UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (98887714, 'Scoville', 'Pearson', 'Beaufort', 'South Carolina', 'United States') WHERE id_cep = 5;
 UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (46460967, 'Maple', 'Pond', 'Albany', 'New York', 'United States') cep = 'Dminyc' WHERE id_cep = 14;
 UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (48628173, 'Butternut', 'Grim', 'Orlando', 'Florida', 'United States') cep = 'Britany' WHERE id_cep = 18;
