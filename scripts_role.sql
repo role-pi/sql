@@ -287,19 +287,19 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 
 -- UPDATE 
 
---Enderecos
+-- Enderecos
 UPDATE enderecos SET cep = 57183222, logradouro = 'Elgar', bairro = 'Steensland', cidade = 'Oklahoma City', estado = 'Oklahoma', país = 'United States' WHERE id_cep = 3;
-UPDATE enderecos SET cep = 16451100, logradouro = 'Monterey', bairro =  'Farwell', cidade =  'Nashville', estado = 'Tennessee', 'United States' WHERE id_cep = 1
-UPDATE enderecos SET cep = 98887714, logradouro = 'Scoville', bairro = 'Pearson', cidade = 'Beaufort', estado = 'South Carolina', 'United States' WHERE id_cep = 5;
-UPDATE enderecos SET cep = 46460967, logradouro = 'Maple', bairro = 'Pond', cidade = 'Albany', estado = 'New York', país = 'United States' cep = 'Dminyc' WHERE id_cep = 14;
-UPDATE enderecos SET cep = 48628173 ,logradouro = 'Butternut', bairro = 'Grim', cidade = 'Orlando', estado = 'Florida', país = 'United States'  WHERE id_cep = 18;
+UPDATE enderecos SET cep = 16451100, logradouro = 'Monterey', bairro =  'Farwell', cidade =  'Nashville', estado = 'Tennessee', país = 'United States' WHERE id_cep = 1;
+UPDATE enderecos SET cep = 98887714, logradouro = 'Scoville', bairro = 'Pearson', cidade = 'Beaufort', estado = 'South Carolina', país = 'United States' WHERE id_cep = 5;
+UPDATE enderecos SET cep = 46460967, logradouro = 'Maple', bairro = 'Pond', cidade = 'Albany', estado = 'New York', país = 'United States' WHERE id_cep = 14;
+UPDATE enderecos SET cep = 48628173, logradouro = 'Butternut', bairro = 'Grim', cidade = 'Orlando', estado = 'Florida', país = 'United States'  WHERE id_cep = 18;
 UPDATE enderecos SET cep = 32678411, logradouro = 'Brentwood', bairro = 'Clove', cidade = 'Memphis', estado = 'Tennessee', país = 'United States' WHERE id_cep = 3;
 UPDATE enderecos SET cep = 26007116, logradouro = 'Meadow Valley', bairro = 'Texas', cidade = 'Tucson', estado = 'Arizona', país = 'United States' WHERE id_cep = 1;
 UPDATE enderecos SET cep = 30523723, logradouro = 'Spohn', bairro =  'Golden Leaf', cidade = 'Kansas City', estado = 'Missouri', país = 'United States' WHERE id_cep = 5;
 UPDATE enderecos SET cep = 29212462, logradouro = 'Judy', bairro =  'Pierstorff', cidade =  'Saint Augustine', estado = 'Florida', país = 'United States' WHERE id_cep = 14;
 UPDATE enderecos SET cep = 29212462, logradouro = 'Judy', bairro = 'Pierstorff', cidade = 'Saint Augustine', estado = 'Florida', país = 'United States' WHERE id_cep = 18;
 
---Evento
+-- Evento
 UPDATE eventos SET nome = 'Berg''s Hedgenettle', data_inicio = '2023-03-12 21:50:09', data_fim = '2023-03-19 21:44:29', enderecos_cep = 74593766, complemento_endereco = 'Parkway' WHERE id_evento = 5;
 UPDATE eventos SET nome = 'Buddlejaleaf Viburnum', data_inicio =  '2022-10-25 22:07:36', data_fim = '2022-11-27 13:12:19', enderecos_cep = 74593766, complemento_endereco = 'Junction' WHERE id_evento = 14;
 UPDATE eventos SET nome = 'Carolina Oatgrass', data_inicio = '2023-01-30 20:01:38', data_fim = '2022-12-09 06:47:49', enderecos_cep = 74593766, complemento_endereco = 'Trail' WHERE id_evento = 18;
@@ -313,7 +313,7 @@ UPDATE eventos SET nome = 'Woolly Brickellbush', data_inicio = '2023-02-16 22:01
 UPDATE eventos SET nome = 'Plagiobryum Moss', data_inicio = '2022-06-21 13:01:20', data_fim = '2022-06-24 11:16:10', enderecos_cep = 74593766, complemento_endereco = 'Road' WHERE id_evento = 14;
 UPDATE eventos SET nome = 'Henbane', data_inicio = '2023-04-19 22:30:47', data_fim = '2022-06-01 18:48:44', enderecos_cep = 74593766, complemento_endereco = 'Lane' WHERE id_evento = 18;
 
---Transacoes
+-- Transacoes
 UPDATE transacoes SET valor = 554.43, data = '2023-01-15 14:27:43' WHERE id_transacao = 1;
 UPDATE transacoes SET valor = 45.45, data = '2020-12-23 06:26:55' WHERE id_transacao = 5; 
 UPDATE transacoes SET valor = 04.27, data = '2022-05-30 12:30:00' WHERE id_transacao = 22; 
@@ -336,7 +336,7 @@ UPDATE insumos SET tipo = 5, nome = 'Issac King' WHERE id_insumo = 5;
 UPDATE insumos SET tipo = 1, nome = 'Pinters Onw' WHERE id_insumo = 18;
 UPDATE insumos SET tipo = 3, nome = 'Poplolli Little' WHERE id_insumo = 1;
 
---Usuarios
+-- Usuarios
 UPDATE usuarios SET nome = 'Charlotte' WHERE id_usuario = 3;
 UPDATE usuarios SET nome = 'Donatella' WHERE id_usuario = 1;
 UPDATE usuarios SET nome = 'Ludovics' WHERE id_usuario = 5;
