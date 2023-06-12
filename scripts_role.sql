@@ -287,6 +287,36 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 
 -- UPDATE 
 
+--Enderecos
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET cep = 'Charlotte' WHERE id_cep = 3;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET cep = 'Donatella' WHERE id_cep = 1;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (98887714, 'Scoville', 'Pearson', 'Beaufort', 'South Carolina', 'United States') WHERE id_cep = 5;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (46460967, 'Maple', 'Pond', 'Albany', 'New York', 'United States') cep = 'Dminyc' WHERE id_cep = 14;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (48628173, 'Butternut', 'Grim', 'Orlando', 'Florida', 'United States') cep = 'Britany' WHERE id_cep = 18;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (32678411, 'Brentwood', 'Clove', 'Memphis', 'Tennessee', 'United States') WHERE id_cep = 3;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (26007116, 'Meadow Valley', 'Texas', 'Tucson', 'Arizona', 'United States') WHERE id_cep = 1;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (30523723, 'Spohn', 'Golden Leaf', 'Kansas City', 'Missouri', 'United States') WHERE id_cep = 5;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (29212462, 'Judy', 'Pierstorff', 'Saint Augustine', 'Florida', 'United States') WHERE id_cep = 14;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (29212462, 'Judy', 'Pierstorff', 'Saint Augustine', 'Florida', 'United States') WHERE id_cep = 18;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (29212462, 'Judy', 'Pierstorff', 'Saint Augustine', 'Florida', 'United States') WHERE id_cep = 14;
+UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (74593766, 'Morning', '2nd', 'San Antonio', 'Texas', 'United States') WHERE id_cep = 18;
+
+--Evento
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_evento = 3;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Charlotte' WHERE id_evento = 1;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 5;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_evento = 14;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Charlotte' WHERE id_evento = 18;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Donatella' WHERE id_evento = 3;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_evento = 1;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Donatella' WHERE id_evento = 5;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 5;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 5;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_evento = 14;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_evento = 18;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_evento = 14;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 18;
+
 --Transacoes
 UPDATE transacoes SET valor = 554.43, data = '2023-01-15 14:27:43' WHERE id_transacao = 1;
 UPDATE transacoes SET valor = 45.45, data = '2020-12-23 06:26:55' WHERE id_transacao = 5; 
@@ -322,36 +352,6 @@ UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/240x100.png/cc00
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/126x100.png/cc0000/ffffff' WHERE id_usuario = 2;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/115x100.png/cc0000/ffffff' WHERE id_usuario = 4;
 UPDATE usuarios SET foto_de_perfil_url = 'http://dummyimage.com/237x100.png/cc0000/ffffff' WHERE id_usuario = 24;
-
---Enderecos
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Charlotte' WHERE id_usuario = 3;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Donatella' WHERE id_usuario = 1;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Ludovics' WHERE id_usuario = 5;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Dminyc' WHERE id_usuario = 14;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Britany' WHERE id_usuario = 18;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Charlotte' WHERE id_usuario = 3;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Donatella' WHERE id_usuario = 1;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Ludovics' WHERE id_usuario = 5;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Dminyc' WHERE id_usuario = 14;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Britany' WHERE id_usuario = 18;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Dminyc' WHERE id_usuario = 14;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET nome = 'Britany' WHERE id_usuario = 18;
-
---Evento
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Charlotte' WHERE id_usuario = 3;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Donatella' WHERE id_usuario = 1;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_usuario = 5;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_usuario = 14;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_usuario = 18;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Charlotte' WHERE id_usuario = 3;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Donatella' WHERE id_usuario = 1;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_usuario = 5;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_usuario = 5;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_usuario = 5;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_usuario = 14;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_usuario = 18;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_usuario = 14;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_usuario = 18;
 
 -- DELETE
 
