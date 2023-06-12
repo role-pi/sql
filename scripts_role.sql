@@ -288,18 +288,16 @@ INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5
 -- UPDATE 
 
 --Enderecos
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (57183222, 'Elgar', 'Steensland', 'Oklahoma City', 'Oklahoma', 'United States') WHERE id_cep = 3;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (16451100, 'Monterey', 'Farwell', 'Nashville', 'Tennessee', 'United States') WHERE id_cep = 1;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (98887714, 'Scoville', 'Pearson', 'Beaufort', 'South Carolina', 'United States') WHERE id_cep = 5;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (46460967, 'Maple', 'Pond', 'Albany', 'New York', 'United States') cep = 'Dminyc' WHERE id_cep = 14;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (48628173, 'Butternut', 'Grim', 'Orlando', 'Florida', 'United States') cep = 'Britany' WHERE id_cep = 18;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (32678411, 'Brentwood', 'Clove', 'Memphis', 'Tennessee', 'United States') WHERE id_cep = 3;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (26007116, 'Meadow Valley', 'Texas', 'Tucson', 'Arizona', 'United States') WHERE id_cep = 1;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (30523723, 'Spohn', 'Golden Leaf', 'Kansas City', 'Missouri', 'United States') WHERE id_cep = 5;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (29212462, 'Judy', 'Pierstorff', 'Saint Augustine', 'Florida', 'United States') WHERE id_cep = 14;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (29212462, 'Judy', 'Pierstorff', 'Saint Augustine', 'Florida', 'United States') WHERE id_cep = 18;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (29212462, 'Judy', 'Pierstorff', 'Saint Augustine', 'Florida', 'United States') WHERE id_cep = 14;
-UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (74593766, 'Morning', '2nd', 'San Antonio', 'Texas', 'United States') WHERE id_cep = 18;
+UPDATE enderecos SET cep = 57183222, logradouro = 'Elgar', bairro = 'Steensland', cidade = 'Oklahoma City', estado = 'Oklahoma', país = 'United States' WHERE id_cep = 3;
+UPDATE enderecos SET cep = 16451100, logradouro = 'Monterey', bairro =  'Farwell', cidade =  'Nashville', estado = 'Tennessee', 'United States' WHERE id_cep = 1
+UPDATE enderecos SET cep = 98887714, logradouro = 'Scoville', bairro = 'Pearson', cidade = 'Beaufort', estado = 'South Carolina', 'United States' WHERE id_cep = 5;
+UPDATE enderecos SET cep = 46460967, logradouro = 'Maple', bairro = 'Pond', cidade = 'Albany', estado = 'New York', país = 'United States' cep = 'Dminyc' WHERE id_cep = 14;
+UPDATE enderecos SET cep = 48628173 ,logradouro = 'Butternut', bairro = 'Grim', cidade = 'Orlando', estado = 'Florida', país = 'United States'  WHERE id_cep = 18;
+UPDATE enderecos SET cep = 32678411, logradouro = 'Brentwood', bairro = 'Clove', cidade = 'Memphis', estado = 'Tennessee', país = 'United States' WHERE id_cep = 3;
+UPDATE enderecos SET cep = 26007116, logradouro = 'Meadow Valley', bairro = 'Texas', cidade = 'Tucson', estado = 'Arizona', país = 'United States' WHERE id_cep = 1;
+UPDATE enderecos SET cep = 30523723, logradouro = 'Spohn', bairro =  'Golden Leaf', cidade = 'Kansas City', estado = 'Missouri', país = 'United States' WHERE id_cep = 5;
+UPDATE enderecos SET cep = 29212462, logradouro = 'Judy', bairro =  'Pierstorff', cidade =  'Saint Augustine', estado = 'Florida', país = 'United States' WHERE id_cep = 14;
+UPDATE enderecos SET cep = 29212462, logradouro = 'Judy', bairro = 'Pierstorff', cidade = 'Saint Augustine', estado = 'Florida', país = 'United States' WHERE id_cep = 18;
 
 --Evento
 UPDATE eventos SET (id_evento = 14, nome = 'Berg''s Hedgenettle', data_inicio = '2023-03-12 21:50:09', data_fim = '2023-03-19 21:44:29', enderecos_cep = 74593766, complemento_endereco = 'Parkway') WHERE id_evento = 5;
