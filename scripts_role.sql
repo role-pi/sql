@@ -306,16 +306,16 @@ UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemen
 UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Charlotte' WHERE id_evento = 1;
 UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 5;
 UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_evento = 14;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Charlotte' WHERE id_evento = 18;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Donatella' WHERE id_evento = 3;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_evento = 1;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Donatella' WHERE id_evento = 5;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 5;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 5;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_evento = 14;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_evento = 18;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_evento = 14;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 18;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (16, 'Carolina Oatgrass', '2023-01-30 20:01:38', '2022-12-09 06:47:49', 74593766, 'Trail') WHERE id_evento = 18;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (17, 'Hairy Nightshade', '2022-09-29 23:31:23', '2022-10-26 01:43:16', 74593766, 'Hill') WHERE id_evento = 3;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (18, 'Cleft Phlox', '2022-08-09 03:02:11', '2022-11-11 17:20:25', 74593766, 'Road') WHERE id_evento = 1;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (19, 'Ross'' Avens', '2022-07-04 14:21:32', '2022-06-21 00:05:10', 74593766, 'Lane') WHERE id_evento = 5;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (20, 'Longleaf False Goldeneye', '2022-06-08 12:01:23', '2022-08-17 15:58:16', 74593766, 'Court') WHERE id_evento = 5;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (21, 'Welsh''s Bugseed', '2022-06-03 16:55:02', '2023-02-08 02:21:41', 74593766, 'Terrace') WHERE id_evento = 5;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (22, 'Red Grama', '2023-03-02 16:46:42', '2022-06-05 00:40:39', 74593766, 'Parkway') WHERE id_evento = 14;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (23, 'Woolly Brickellbush', '2023-02-16 22:01:53', '2022-07-12 07:09:38', 74593766, 'Hill') = 18;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (24, 'Plagiobryum Moss', '2022-06-21 13:01:20', '2022-06-24 11:16:10', 74593766, 'Road') WHERE id_evento = 14;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (25, 'Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', 74593766, 'Lane') WHERE id_evento = 18;
 
 --Transacoes
 UPDATE transacoes SET valor = 554.43, data = '2023-01-15 14:27:43' WHERE id_transacao = 1;
