@@ -302,10 +302,10 @@ UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (29212462,
 UPDATE enderecos (cep, logradouro, bairro, cidade, estado, país) SET (74593766, 'Morning', '2nd', 'San Antonio', 'Texas', 'United States') WHERE id_cep = 18;
 
 --Evento
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Ludovics' WHERE id_evento = 3;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Charlotte' WHERE id_evento = 1;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Dminyc' WHERE id_evento = 5;
-UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET nome = 'Britany' WHERE id_evento = 14;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (12, 'Boundary Peak Rockcress', '2023-02-05 04:06:14', '2023-01-11 06:33:34', 74593766, 'Pass') WHERE id_evento = 3;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (13, 'European Purple Lousewort', '2023-01-08 03:06:24', '2023-01-11 22:55:56', 74593766, 'Junction') WHERE id_evento = 1;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (14, 'Berg''s Hedgenettle', '2023-03-12 21:50:09', '2023-03-19 21:44:29', 74593766, 'Parkway') WHERE id_evento = 5;
+UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (15, 'Buddlejaleaf Viburnum', '2022-10-25 22:07:36', '2022-11-27 13:12:19', 74593766, 'Junction') WHERE id_evento = 14;
 UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (16, 'Carolina Oatgrass', '2023-01-30 20:01:38', '2022-12-09 06:47:49', 74593766, 'Trail') WHERE id_evento = 18;
 UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (17, 'Hairy Nightshade', '2022-09-29 23:31:23', '2022-10-26 01:43:16', 74593766, 'Hill') WHERE id_evento = 3;
 UPDATE eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) SET (18, 'Cleft Phlox', '2022-08-09 03:02:11', '2022-11-11 17:20:25', 74593766, 'Road') WHERE id_evento = 1;
