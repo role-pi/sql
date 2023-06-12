@@ -7,6 +7,7 @@ DROP DATABASE role;
 CREATE DATABASE IF NOT EXISTS role;
 
 USE role;
+
 -- -----------------------------------------------------
 -- Table `enderecos`
 -- -----------------------------------------------------
