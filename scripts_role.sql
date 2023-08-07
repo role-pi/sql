@@ -2,13 +2,15 @@
 -- Mon May 29 04:48:57 2023
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
+-- DROP DATABASE role;--  
+
 DROP DATABASE role;
 
 CREATE DATABASE IF NOT EXISTS role;
 
 USE role;
 
--- -----------------------------------------------------
+-----------------------------------------------------
 -- Table `enderecos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enderecos` (
@@ -24,21 +26,22 @@ CREATE TABLE IF NOT EXISTS `enderecos` (
 -- Table `eventos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventos` (
-  `id_evento` INT NOT NULL,
+  `id_evento` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `data_inicio` TIMESTAMP NULL,
   `data_fim` TIMESTAMP NULL,
-  `enderecos_cep` INT NOT NULL,
+  `enderecos_cep` INT NULL,
   `complemento_endereco` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_evento`, `enderecos_cep`),
+  PRIMARY KEY (`id_evento`),
   CONSTRAINT `fk_eventos_enderecos1` FOREIGN KEY (`enderecos_cep`) REFERENCES `enderecos` (`cep`) 
 );
 -- -----------------------------------------------------
 -- Table `usuarios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id_usuario` INT NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
+  `id_usuario` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(100) NOT NULL,
+  `nome` VARCHAR(45) NULL,
   `foto_de_perfil_url` VARCHAR(2000) NULL,
   PRIMARY KEY (`id_usuario`)
 );
@@ -56,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `eventos_has_usuarios` (
 -- Table `insumos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `insumos` (
-  `id_insumo` INT NOT NULL,
+  `id_insumo` INT NOT NULL AUTO_INCREMENT,
   `tipo` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `descricao` VARCHAR(120) NULL,
@@ -66,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `insumos` (
 -- Table `transacoes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `transacoes` (
-  `id_transacao` INT NOT NULL,
+  `id_transacao` INT NOT NULL AUTO_INCREMENT,
   `valor` DECIMAL(10, 2) NOT NULL,
   `data` TIMESTAMP NOT NULL,
   `usuarios_id_usuario` INT NOT NULL,
@@ -146,31 +149,31 @@ INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, comp
 
 -- Usuários
 
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (1, 'Donella', 'http://dummyimage.com/193x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (2, 'Emory', 'http://dummyimage.com/214x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (3, 'Charlotta', 'http://dummyimage.com/102x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (4, 'Denyse', 'http://dummyimage.com/249x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (5, 'Ludovico', 'http://dummyimage.com/167x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (6, 'Kimberlyn', 'http://dummyimage.com/221x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (7, 'Lazaro', 'http://dummyimage.com/232x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (8, 'Jayson', 'http://dummyimage.com/228x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (9, 'Robinetta', 'http://dummyimage.com/179x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (10, 'Mychal', 'http://dummyimage.com/109x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (11, 'Arvy', 'http://dummyimage.com/223x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (12, 'Cristobal', 'http://dummyimage.com/147x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (13, 'Padraic', 'http://dummyimage.com/206x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (14, 'Dominic', 'http://dummyimage.com/220x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (15, 'Munroe', 'http://dummyimage.com/170x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (16, 'Orelee', 'http://dummyimage.com/101x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (17, 'Ali', 'http://dummyimage.com/161x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (18, 'Brianne', 'http://dummyimage.com/120x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (19, 'Darb', 'http://dummyimage.com/194x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (20, 'Nessa', 'http://dummyimage.com/248x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (21, 'Urson', 'http://dummyimage.com/160x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (22, 'Martyn', 'http://dummyimage.com/219x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (23, 'Barb', 'http://dummyimage.com/247x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (24, 'Jillene', 'http://dummyimage.com/181x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, nome, foto_de_perfil_url) VALUES (25, 'Monro', 'http://dummyimage.com/184x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (1, 'rpetri0@redcross.org', 'Roselia', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (2, 'cspyer1@seattletimes.com', 'Christalle', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (3, 'agraveston2@buzzfeed.com', 'Aldon', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (4, 'bbussens3@reuters.com', 'Brana', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (5, 'abletsor4@hp.com', 'Alex', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (6, 'iduggen5@ibm.com', 'Ilene', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (7, 'emarsy6@artisteer.com', 'Evania', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (8, 'ulaurenson7@godaddy.com', 'Uta', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (9, 'smorad8@wsj.com', 'Sutherlan', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (10, 'temmott9@csmonitor.com', 'Tabbie', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (11, 'eglawsopa@europa.eu', 'Emile', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (12, 'cclementeb@nationalgeographic.com', 'Chicky', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (13, 'astansellc@amazonaws.com', 'Alexandrina', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (14, 'krobroed@fotki.com', 'Krista', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (15, 'hchestermane@skype.com', 'Heinrik', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (16, 'bdyerf@senate.gov', 'Brennen', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (17, 'alidsterg@wikimedia.org', 'Amil', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (18, 'tcouldwellh@go.com', 'Trixy', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (19, 'hhurleyi@freewebs.com', 'Harcourt', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (20, 'lconsadinej@cpanel.net', 'Lari', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (21, 'wbaldrickk@t.co', 'Wallace', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (22, 'bblewl@chicagotribune.com', 'Beverlie', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (23, 'hberrowm@webeden.co.uk', 'Hermon', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (24, 'wvivienn@hostgator.com', 'Whitney', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (25, 'mmatthenseno@biblegateway.com', 'Mattheus', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
 
 -- Eventos has usuários
 
