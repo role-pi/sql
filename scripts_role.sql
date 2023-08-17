@@ -63,7 +63,9 @@ CREATE TABLE IF NOT EXISTS `insumos` (
   `tipo` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `descricao` VARCHAR(120) NULL,
-  PRIMARY KEY (`id_insumo`)
+  `eventos_id_evento` INT NOT NULL,
+  PRIMARY KEY (`id_insumo`),
+  CONSTRAINT `fk_insumos_eventos1` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`)
 );
 -- -----------------------------------------------------
 -- Table `transacoes`
@@ -77,16 +79,6 @@ CREATE TABLE IF NOT EXISTS `transacoes` (
   PRIMARY KEY (`id_transacao`),
   CONSTRAINT `fk_transacoes_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) ,
   CONSTRAINT `fk_transacoes_insumos1` FOREIGN KEY (`insumos_id_insumo`) REFERENCES `insumos` (`id_insumo`) 
-);
--- -----------------------------------------------------
--- Table `eventos_has_insumos`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `eventos_has_insumos` (
-  `eventos_id_evento` INT NOT NULL,
-  `insumos_id_insumo` INT NOT NULL,
-  PRIMARY KEY (`eventos_id_evento`, `insumos_id_insumo`),
-  CONSTRAINT `fk_eventos_has_insumos_eventos1` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`) ,
-  CONSTRAINT `fk_eventos_has_insumos_insumos1` FOREIGN KEY (`insumos_id_insumo`) REFERENCES `insumos` (`id_insumo`) 
 );
 
 -- INSERT
@@ -121,59 +113,59 @@ INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (3
 
 -- Eventos
 
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (1, 'Bolander''s Yampah', '2022-09-22 18:55:22', '2023-01-08 09:01:29', 74593766, 'Hill');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (2, 'Showy Sunflower', '2022-11-04 22:13:14', '2022-10-23 20:25:05', 74593766, 'Circle');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (3, 'Alfalfa', '2022-07-17 04:36:45', '2022-12-11 10:06:08', 74593766, 'Pass');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (4, 'Knob Sedge', '2022-07-11 02:33:52', '2022-09-28 06:01:26', 74593766, 'Court');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (5, 'Rattlebox', '2022-06-11 01:49:13', '2023-02-07 08:25:17', 74593766, 'Lane');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (6, 'Crabseye Lichen', '2023-03-19 04:51:26', '2022-08-26 18:29:37', 74593766, 'Hill');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (7, 'Lecidella Lichen', '2023-01-28 14:13:27', '2023-01-05 14:37:11', 74593766, 'Terrace');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (8, 'Evergreen Candytuft', '2023-01-03 10:12:25', '2023-03-03 22:16:31', 74593766, 'Way');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (9, 'Thompson''s Beardtongue', '2022-10-09 07:48:06', '2022-09-23 08:24:09', 74593766, 'Way');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (10, 'Eastern Featherbells', '2022-08-29 08:46:00', '2022-10-10 04:45:50', 74593766, 'Plaza');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (11, 'Gordon''s Buckwheat', '2022-09-16 07:14:23', '2022-12-01 16:30:27', 74593766, 'Junction');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (12, 'Boundary Peak Rockcress', '2023-02-05 04:06:14', '2023-01-11 06:33:34', 74593766, 'Pass');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (13, 'European Purple Lousewort', '2023-01-08 03:06:24', '2023-01-11 22:55:56', 74593766, 'Junction');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (14, 'Berg''s Hedgenettle', '2023-03-12 21:50:09', '2023-03-19 21:44:29', 74593766, 'Parkway');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (15, 'Buddlejaleaf Viburnum', '2022-10-25 22:07:36', '2022-11-27 13:12:19', 74593766, 'Junction');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (16, 'Carolina Oatgrass', '2023-01-30 20:01:38', '2022-12-09 06:47:49', 74593766, 'Trail');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (17, 'Hairy Nightshade', '2022-09-29 23:31:23', '2022-10-26 01:43:16', 74593766, 'Hill');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (18, 'Cleft Phlox', '2022-08-09 03:02:11', '2022-11-11 17:20:25', 74593766, 'Road');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (19, 'Ross'' Avens', '2022-07-04 14:21:32', '2022-06-21 00:05:10', 74593766, 'Lane');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (20, 'Longleaf False Goldeneye', '2022-06-08 12:01:23', '2022-08-17 15:58:16', 74593766, 'Court');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (21, 'Welsh''s Bugseed', '2022-06-03 16:55:02', '2023-02-08 02:21:41', 74593766, 'Terrace');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (22, 'Red Grama', '2023-03-02 16:46:42', '2022-06-05 00:40:39', 74593766, 'Parkway');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (23, 'Woolly Brickellbush', '2023-02-16 22:01:53', '2022-07-12 07:09:38', 74593766, 'Hill');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (24, 'Plagiobryum Moss', '2022-06-21 13:01:20', '2022-06-24 11:16:10', 74593766, 'Road');
-INSERT INTO eventos (id_evento, nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES (25, 'Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', 74593766, 'Lane');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Bolander''s Yampah', '2022-09-22 18:55:22', '2023-01-08 09:01:29', 74593766, 'Hill');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Showy Sunflower', '2022-11-04 22:13:14', '2022-10-23 20:25:05', 74593766, 'Circle');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Alfalfa', '2022-07-17 04:36:45', '2022-12-11 10:06:08', 74593766, 'Pass');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Knob Sedge', '2022-07-11 02:33:52', '2022-09-28 06:01:26', 74593766, 'Court');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Rattlebox', '2022-06-11 01:49:13', '2023-02-07 08:25:17', 74593766, 'Lane');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Crabseye Lichen', '2023-03-19 04:51:26', '2022-08-26 18:29:37', 74593766, 'Hill');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Lecidella Lichen', '2023-01-28 14:13:27', '2023-01-05 14:37:11', 74593766, 'Terrace');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Evergreen Candytuft', '2023-01-03 10:12:25', '2023-03-03 22:16:31', 74593766, 'Way');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Thompson''s Beardtongue', '2022-10-09 07:48:06', '2022-09-23 08:24:09', 74593766, 'Way');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Eastern Featherbells', '2022-08-29 08:46:00', '2022-10-10 04:45:50', 74593766, 'Plaza');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Gordon''s Buckwheat', '2022-09-16 07:14:23', '2022-12-01 16:30:27', 74593766, 'Junction');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Boundary Peak Rockcress', '2023-02-05 04:06:14', '2023-01-11 06:33:34', 74593766, 'Pass');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('European Purple Lousewort', '2023-01-08 03:06:24', '2023-01-11 22:55:56', 74593766, 'Junction');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Berg''s Hedgenettle', '2023-03-12 21:50:09', '2023-03-19 21:44:29', 74593766, 'Parkway');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Buddlejaleaf Viburnum', '2022-10-25 22:07:36', '2022-11-27 13:12:19', 74593766, 'Junction');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Carolina Oatgrass', '2023-01-30 20:01:38', '2022-12-09 06:47:49', 74593766, 'Trail');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Hairy Nightshade', '2022-09-29 23:31:23', '2022-10-26 01:43:16', 74593766, 'Hill');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Cleft Phlox', '2022-08-09 03:02:11', '2022-11-11 17:20:25', 74593766, 'Road');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Ross'' Avens', '2022-07-04 14:21:32', '2022-06-21 00:05:10', 74593766, 'Lane');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Longleaf False Goldeneye', '2022-06-08 12:01:23', '2022-08-17 15:58:16', 74593766, 'Court');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Welsh''s Bugseed', '2022-06-03 16:55:02', '2023-02-08 02:21:41', 74593766, 'Terrace');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Red Grama', '2023-03-02 16:46:42', '2022-06-05 00:40:39', 74593766, 'Parkway');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Woolly Brickellbush', '2023-02-16 22:01:53', '2022-07-12 07:09:38', 74593766, 'Hill');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Plagiobryum Moss', '2022-06-21 13:01:20', '2022-06-24 11:16:10', 74593766, 'Road');
+INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', 74593766, 'Lane');
 
 -- Usuários
 
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (1, 'rpetri0@redcross.org', 'Roselia', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (2, 'cspyer1@seattletimes.com', 'Christalle', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (3, 'agraveston2@buzzfeed.com', 'Aldon', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (4, 'bbussens3@reuters.com', 'Brana', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (5, 'abletsor4@hp.com', 'Alex', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (6, 'iduggen5@ibm.com', 'Ilene', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (7, 'emarsy6@artisteer.com', 'Evania', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (8, 'ulaurenson7@godaddy.com', 'Uta', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (9, 'smorad8@wsj.com', 'Sutherlan', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (10, 'temmott9@csmonitor.com', 'Tabbie', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (11, 'eglawsopa@europa.eu', 'Emile', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (12, 'cclementeb@nationalgeographic.com', 'Chicky', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (13, 'astansellc@amazonaws.com', 'Alexandrina', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (14, 'krobroed@fotki.com', 'Krista', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (15, 'hchestermane@skype.com', 'Heinrik', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (16, 'bdyerf@senate.gov', 'Brennen', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (17, 'alidsterg@wikimedia.org', 'Amil', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (18, 'tcouldwellh@go.com', 'Trixy', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (19, 'hhurleyi@freewebs.com', 'Harcourt', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (20, 'lconsadinej@cpanel.net', 'Lari', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (21, 'wbaldrickk@t.co', 'Wallace', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (22, 'bblewl@chicagotribune.com', 'Beverlie', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (23, 'hberrowm@webeden.co.uk', 'Hermon', 'http://dummyimage.com/100x100.png/dddddd/000000');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (24, 'wvivienn@hostgator.com', 'Whitney', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
-INSERT INTO usuarios (id_usuario, email, nome, foto_de_perfil_url) VALUES (25, 'mmatthenseno@biblegateway.com', 'Mattheus', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('rpetri0@redcross.org', 'Roselia', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('cspyer1@seattletimes.com', 'Christalle', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('agraveston2@buzzfeed.com', 'Aldon', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('bbussens3@reuters.com', 'Brana', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('abletsor4@hp.com', 'Alex', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('iduggen5@ibm.com', 'Ilene', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('emarsy6@artisteer.com', 'Evania', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('ulaurenson7@godaddy.com', 'Uta', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('smorad8@wsj.com', 'Sutherlan', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('temmott9@csmonitor.com', 'Tabbie', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('eglawsopa@europa.eu', 'Emile', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('cclementeb@nationalgeographic.com', 'Chicky', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('astansellc@amazonaws.com', 'Alexandrina', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('krobroed@fotki.com', 'Krista', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('hchestermane@skype.com', 'Heinrik', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('bdyerf@senate.gov', 'Brennen', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('alidsterg@wikimedia.org', 'Amil', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('tcouldwellh@go.com', 'Trixy', 'http://dummyimage.com/100x100.png/cc0000/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('hhurleyi@freewebs.com', 'Harcourt', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('lconsadinej@cpanel.net', 'Lari', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('wbaldrickk@t.co', 'Wallace', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('bblewl@chicagotribune.com', 'Beverlie', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('hberrowm@webeden.co.uk', 'Hermon', 'http://dummyimage.com/100x100.png/dddddd/000000');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('wvivienn@hostgator.com', 'Whitney', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
+INSERT INTO usuarios (email, nome, foto_de_perfil_url) VALUES ('mmatthenseno@biblegateway.com', 'Mattheus', 'http://dummyimage.com/100x100.png/ff4444/ffffff');
 
 -- Eventos has usuários
 
@@ -205,87 +197,59 @@ INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES
 
 -- Insumos
 
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (1, 2, 'Ivy', 'Hedera L.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (2, 3, 'Donner Lake Lupine', 'Lupinus sellulus Kellogg ssp. sellulus var. sellulus');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (3, 2, 'Cassia', 'Cinnamomum aromaticum Nees');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (4, 1, 'Candyleaf', 'Stevia rebaudiana (Bertoni) Bertoni');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (5, 1, 'Western White Clematis', 'Clematis ligusticifolia Nutt.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (6, 2, 'Canna', 'Canna L.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (7, 5, 'Needle Lichen', 'Chaenotheca xyloxena Nadv.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (8, 1, 'Lecidea Lichen', 'Lecidea atromarginata H. Magn.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (9, 4, 'Mandarin Lime', 'Citrus ×limonia Osbeck (pro sp.)');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (10, 1, 'Islandthicket Threeawn', 'Aristida refracta Griseb.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (11, 2, 'Diphyscium Moss', 'Diphyscium D. Mohr');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (12, 5, 'Foxtail Barley', 'Hordeum jubatum L. ssp. jubatum');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (13, 3, 'Waimea Pipturus', 'Pipturus albidus (Hook. & Arn.) A. Gray');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (14, 3, 'Broomwort', 'Scoparia montevidensis (Spreng.) R.E. Fries var. glandulifera (Fritsch) R.E. Fries');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (15, 2, 'Yellow Indian Paintbrush', 'Castilleja flava S. Watson');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (16, 2, 'Desert Evening Primrose', 'Oenothera primiveris A. Gray ssp. bufonis (M.E. Jones) Munz');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (17, 3, 'Epimedium', 'Epimedium L.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (18, 5, 'Broadleaf Rush', 'Juncus planifolius R. Br.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (19, 1, 'Woolly Sage', 'Salvia funerea M.E. Jones');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (20, 2, 'Frosted Buckwheat', 'Eriogonum incanum Torr. & A. Gray');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (21, 1, 'Bog Birch', 'Betula pumila L. var. renifolia Fernald');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (22, 1, 'Isachne', 'Isachne purpurascens Glassman');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (23, 3, 'Fendler''s Flatsedge', 'Cyperus fendlerianus Boeckeler');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (24, 5, 'Corn', 'Zea mays L.');
-INSERT INTO insumos (id_insumo, tipo, nome, descricao) VALUES (25, 4, 'Navajo Evening Primrose', 'Oenothera caespitosa Nutt. ssp. navajoensis W.L. Wagner, Stockhouse & Klein');
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Ivy', 'Hedera L.', 1);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Donner Lake Lupine', 'Lupinus sellulus Kellogg ssp. sellulus var. sellulus', 1);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Cassia', 'Cinnamomum aromaticum Nees', 1);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Candyleaf', 'Stevia rebaudiana (Bertoni) Bertoni', 1);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Western White Clematis', 'Clematis ligusticifolia Nutt.', 1);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Canna', 'Canna L.', 2);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (5, 'Needle Lichen', 'Chaenotheca xyloxena Nadv.', 2);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Lecidea Lichen', 'Lecidea atromarginata H. Magn.', 2);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (4, 'Mandarin Lime', 'Citrus ×limonia Osbeck (pro sp.)', 2);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Islandthicket Threeawn', 'Aristida refracta Griseb.', 2);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Diphyscium Moss', 'Diphyscium D. Mohr', 3);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (5, 'Foxtail Barley', 'Hordeum jubatum L. ssp. jubatum', 3);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Waimea Pipturus', 'Pipturus albidus (Hook. & Arn.) A. Gray', 3);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Broomwort', 'Scoparia montevidensis (Spreng.) R.E. Fries var. glandulifera (Fritsch) R.E. Fries', 3);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Yellow Indian Paintbrush', 'Castilleja flava S. Watson', 3);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Desert Evening Primrose', 'Oenothera primiveris A. Gray ssp. bufonis (M.E. Jones) Munz', 4);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Epimedium', 'Epimedium L.', 4);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (5, 'Broadleaf Rush', 'Juncus planifolius R. Br.', 4);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Woolly Sage', 'Salvia funerea M.E. Jones', 4);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Frosted Buckwheat', 'Eriogonum incanum Torr. & A. Gray', 4);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Bog Birch', 'Betula pumila L. var. renifolia Fernald', 5);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Isachne', 'Isachne purpurascens Glassman', 5);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Fendler''s Flatsedge', 'Cyperus fendlerianus Boeckeler', 5);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (5, 'Corn', 'Zea mays L.', 5);
+INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (4, 'Navajo Evening Primrose', 'Oenothera caespitosa Nutt. ssp. navajoensis W.L. Wagner, Stockhouse & Klein', 5);
 
 -- Transações
 
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (1, 457.34, '2022-09-16 12:17:43', 1, 1);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (2, 320.09, '2022-08-03 07:54:58', 2, 2);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (3, 325.75, '2022-08-06 12:36:34', 3, 3);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (4, 10.33, '2023-03-07 15:25:31', 4, 4);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (5, 113.87, '2023-01-23 15:36:15', 5, 5);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (6, 200.38, '2022-10-06 22:50:35', 1, 6);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (7, 255.0, '2023-02-04 10:05:28', 2, 7);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (8, 339.45, '2023-04-30 02:22:52', 3, 8);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (9, 312.3, '2023-03-07 22:09:15', 4, 9);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (10, 251.27, '2022-06-27 15:08:11', 5, 10);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (11, 93.82, '2022-11-14 08:58:50', 1, 11);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (12, 85.17, '2022-11-17 19:47:20', 2, 12);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (13, 414.71, '2023-05-07 17:17:38', 3, 13);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (14, 260.51, '2022-07-10 23:48:16', 4, 14);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (15, 96.81, '2023-02-13 05:34:07', 5, 15);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (16, 233.84, '2023-02-14 18:42:52', 1, 16);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (17, 133.34, '2023-04-20 20:11:54', 2, 17);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (18, 88.73, '2023-01-30 17:16:51', 3, 18);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (19, 214.66, '2023-05-26 15:34:32', 4, 19);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (20, 391.03, '2022-07-08 01:41:55', 5, 20);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (21, 227.34, '2022-08-31 07:31:29', 1, 21);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (22, 251.28, '2023-01-11 16:17:14', 2, 22);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (23, 224.15, '2022-12-08 03:21:18', 3, 23);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (24, 122.14, '2022-12-05 07:46:10', 4, 24);
-INSERT INTO transacoes (id_transacao, valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (25, 320.0, '2023-06-01 11:46:06', 5, 25);
-
--- Eventos has insumos
-
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 1);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 2);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 3);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 4);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (1, 5);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 6);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 7);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 8);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 9);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (2, 10);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 11);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 12);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 13);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 14);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (3, 15);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 16);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 17);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 18);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 19);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (4, 20);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 21);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 22);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 23);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 24);
-INSERT INTO eventos_has_insumos (eventos_id_evento, insumos_id_insumo) VALUES (5, 25);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (457.34, '2022-09-16 12:17:43', 1, 1);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (320.09, '2022-08-03 07:54:58', 2, 2);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (325.75, '2022-08-06 12:36:34', 3, 3);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (10.33, '2023-03-07 15:25:31', 4, 4);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (113.87, '2023-01-23 15:36:15', 5, 5);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (200.38, '2022-10-06 22:50:35', 1, 6);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (255.0, '2023-02-04 10:05:28', 2, 7);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (339.45, '2023-04-30 02:22:52', 3, 8);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (312.3, '2023-03-07 22:09:15', 4, 9);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (251.27, '2022-06-27 15:08:11', 5, 10);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (93.82, '2022-11-14 08:58:50', 1, 11);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (85.17, '2022-11-17 19:47:20', 2, 12);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (414.71, '2023-05-07 17:17:38', 3, 13);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (260.51, '2022-07-10 23:48:16', 4, 14);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (96.81, '2023-02-13 05:34:07', 5, 15);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (233.84, '2023-02-14 18:42:52', 1, 16);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (133.34, '2023-04-20 20:11:54', 2, 17);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (88.73, '2023-01-30 17:16:51', 3, 18);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (214.66, '2023-05-26 15:34:32', 4, 19);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (391.03, '2022-07-08 01:41:55', 5, 20);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (227.34, '2022-08-31 07:31:29', 1, 21);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (251.28, '2023-01-11 16:17:14', 2, 22);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (224.15, '2022-12-08 03:21:18', 3, 23);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (122.14, '2022-12-05 07:46:10', 4, 24);
+INSERT INTO transacoes (valor, data, usuarios_id_usuario, insumos_id_insumo) VALUES (320.0, '2023-06-01 11:46:06', 5, 25);
 
 
 -- UPDATE
@@ -374,13 +338,6 @@ DELETE FROM usuarios WHERE id_usuario = 23;
 DELETE FROM usuarios WHERE id_usuario = 24;
 DELETE FROM usuarios WHERE id_usuario = 25;
 
--- Eventos has insumos
-DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 5;
-DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 10;
-DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 15;
-DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 20;
-DELETE FROM eventos_has_insumos WHERE insumos_id_insumo = 25;
-
 -- Transações
 DELETE FROM transacoes WHERE id_transacao = 5;
 DELETE FROM transacoes WHERE id_transacao = 10;
@@ -412,7 +369,6 @@ SELECT COUNT(*) FROM eventos;
 SELECT COUNT(*) FROM usuarios;
 SELECT COUNT(*) FROM insumos;
 SELECT COUNT(*) FROM transacoes;
-SELECT COUNT(*) FROM eventos_has_insumos;
 SELECT COUNT(*) FROM eventos_has_usuarios;
 
 -- SELECT ALL
@@ -421,7 +377,6 @@ SELECT * FROM eventos ORDER BY id_evento;
 SELECT * FROM usuarios ORDER BY id_usuario;
 SELECT * FROM insumos ORDER BY id_insumo;
 SELECT * FROM transacoes ORDER BY id_transacao;
-SELECT * FROM eventos_has_insumos ORDER BY eventos_id_evento;
 SELECT * FROM eventos_has_usuarios ORDER BY eventos_id_evento;
 
 -- SELECT JOIN
