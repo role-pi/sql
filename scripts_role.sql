@@ -32,6 +32,9 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `data_fim` TIMESTAMP NULL,
   `enderecos_cep` INT NULL,
   `complemento_endereco` VARCHAR(45) NULL,
+  `emoji` VARCHAR(1) NULL,
+  `cor_1` VARCHAR(6) NULL,
+  `cor_2` VARCHAR(6) NULL,
   PRIMARY KEY (`id_evento`),
   CONSTRAINT `fk_eventos_enderecos1` FOREIGN KEY (`enderecos_cep`) REFERENCES `enderecos` (`cep`) 
 );
