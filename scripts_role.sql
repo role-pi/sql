@@ -55,8 +55,8 @@ CREATE TABLE IF NOT EXISTS `eventos_has_usuarios` (
   `eventos_id_evento` INT NOT NULL,
   `usuarios_id_usuario` INT NOT NULL,
   PRIMARY KEY (`eventos_id_evento`, `usuarios_id_usuario`),
-  CONSTRAINT `fk_eventos_has_usuarios_eventos` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`) ,
-  CONSTRAINT `fk_eventos_has_usuarios_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) 
+  CONSTRAINT `fk_eventos_has_usuarios_eventos` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`) ON DELETE CASCADE,
+  CONSTRAINT `fk_eventos_has_usuarios_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE 
 );
 -- -----------------------------------------------------
 -- Table `insumos`
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `insumos` (
   `descricao` VARCHAR(120) NULL,
   `eventos_id_evento` INT NOT NULL,
   PRIMARY KEY (`id_insumo`),
-  CONSTRAINT `fk_insumos_eventos1` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`)
+  CONSTRAINT `fk_insumos_eventos1` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`) ON DELETE CASCADE
 );
 -- -----------------------------------------------------
 -- Table `transacoes`
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `transacoes` (
   `insumos_id_insumo` INT NOT NULL,
   PRIMARY KEY (`id_transacao`),
   CONSTRAINT `fk_transacoes_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) ,
-  CONSTRAINT `fk_transacoes_insumos1` FOREIGN KEY (`insumos_id_insumo`) REFERENCES `insumos` (`id_insumo`) 
+  CONSTRAINT `fk_transacoes_insumos1` FOREIGN KEY (`insumos_id_insumo`) REFERENCES `insumos` (`id_insumo`) ON DELETE CASCADE
 );
 
 -- INSERT
