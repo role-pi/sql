@@ -4,7 +4,7 @@
 -- MySQL Workbench Forward Engineering
 -- DROP DATABASE role;--  
 
-DROP DATABASE defaultdb;
+DROP DATABASE IF EXISTS defaultdb;
 
 CREATE DATABASE IF NOT EXISTS defaultdb;
 
