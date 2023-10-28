@@ -65,7 +65,8 @@ CREATE TABLE IF NOT EXISTS `insumos` (
   `id_insumo` INT NOT NULL AUTO_INCREMENT,
   `tipo` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
-  `descricao` VARCHAR(120) NULL,
+  `notas` VARCHAR(300) NULL,
+  `data` TIMESTAMP NOT NULL,
   `eventos_id_evento` INT NOT NULL,
   PRIMARY KEY (`id_insumo`),
   CONSTRAINT `fk_insumos_eventos1` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`) ON DELETE CASCADE
