@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `data_fim` TIMESTAMP NULL,
   `enderecos_cep` INT NULL,
   `complemento_endereco` VARCHAR(45) NULL,
-  `emoji` VARCHAR(1) NULL,
+  `emoji` VARCHAR(4),
   `cor_1` VARCHAR(6) NULL,
   `cor_2` VARCHAR(6) NULL,
   PRIMARY KEY (`id_evento`),
@@ -66,7 +66,6 @@ CREATE TABLE IF NOT EXISTS `insumos` (
   `tipo` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `notas` VARCHAR(300) NULL,
-  `data` TIMESTAMP NOT NULL,
   `eventos_id_evento` INT NOT NULL,
   PRIMARY KEY (`id_insumo`),
   CONSTRAINT `fk_insumos_eventos1` FOREIGN KEY (`eventos_id_evento`) REFERENCES `eventos` (`id_evento`) ON DELETE CASCADE
@@ -201,31 +200,31 @@ INSERT INTO eventos_has_usuarios (eventos_id_evento, usuarios_id_usuario) VALUES
 
 -- Insumos
 
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Ivy', 'Hedera L.', 1);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Donner Lake Lupine', 'Lupinus sellulus Kellogg ssp. sellulus var. sellulus', 1);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Cassia', 'Cinnamomum aromaticum Nees', 1);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Candyleaf', 'Stevia rebaudiana (Bertoni) Bertoni', 1);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Western White Clematis', 'Clematis ligusticifolia Nutt.', 1);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Canna', 'Canna L.', 2);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (5, 'Needle Lichen', 'Chaenotheca xyloxena Nadv.', 2);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Lecidea Lichen', 'Lecidea atromarginata H. Magn.', 2);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (4, 'Mandarin Lime', 'Citrus ×limonia Osbeck (pro sp.)', 2);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Islandthicket Threeawn', 'Aristida refracta Griseb.', 2);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Diphyscium Moss', 'Diphyscium D. Mohr', 3);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (5, 'Foxtail Barley', 'Hordeum jubatum L. ssp. jubatum', 3);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Waimea Pipturus', 'Pipturus albidus (Hook. & Arn.) A. Gray', 3);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Broomwort', 'Scoparia montevidensis (Spreng.) R.E. Fries var. glandulifera (Fritsch) R.E. Fries', 3);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Yellow Indian Paintbrush', 'Castilleja flava S. Watson', 3);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Desert Evening Primrose', 'Oenothera primiveris A. Gray ssp. bufonis (M.E. Jones) Munz', 4);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Epimedium', 'Epimedium L.', 4);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (5, 'Broadleaf Rush', 'Juncus planifolius R. Br.', 4);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Woolly Sage', 'Salvia funerea M.E. Jones', 4);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (2, 'Frosted Buckwheat', 'Eriogonum incanum Torr. & A. Gray', 4);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Bog Birch', 'Betula pumila L. var. renifolia Fernald', 5);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (1, 'Isachne', 'Isachne purpurascens Glassman', 5);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (3, 'Fendler''s Flatsedge', 'Cyperus fendlerianus Boeckeler', 5);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (5, 'Corn', 'Zea mays L.', 5);
-INSERT INTO insumos (tipo, nome, descricao, eventos_id_evento) VALUES (4, 'Navajo Evening Primrose', 'Oenothera caespitosa Nutt. ssp. navajoensis W.L. Wagner, Stockhouse & Klein', 5);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (2, 'Ivy', 'Hedera L.', 1);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (3, 'Donner Lake Lupine', 'Lupinus sellulus Kellogg ssp. sellulus var. sellulus', 1);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (2, 'Cassia', 'Cinnamomum aromaticum Nees', 1);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (1, 'Candyleaf', 'Stevia rebaudiana (Bertoni) Bertoni', 1);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (1, 'Western White Clematis', 'Clematis ligusticifolia Nutt.', 1);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (2, 'Canna', 'Canna L.', 2);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (5, 'Needle Lichen', 'Chaenotheca xyloxena Nadv.', 2);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (1, 'Lecidea Lichen', 'Lecidea atromarginata H. Magn.', 2);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (4, 'Mandarin Lime', 'Citrus ×limonia Osbeck (pro sp.)', 2);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (1, 'Islandthicket Threeawn', 'Aristida refracta Griseb.', 2);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (2, 'Diphyscium Moss', 'Diphyscium D. Mohr', 3);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (5, 'Foxtail Barley', 'Hordeum jubatum L. ssp. jubatum', 3);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (3, 'Waimea Pipturus', 'Pipturus albidus (Hook. & Arn.) A. Gray', 3);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (3, 'Broomwort', 'Scoparia montevidensis (Spreng.) R.E. Fries var. glandulifera (Fritsch) R.E. Fries', 3);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (2, 'Yellow Indian Paintbrush', 'Castilleja flava S. Watson', 3);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (2, 'Desert Evening Primrose', 'Oenothera primiveris A. Gray ssp. bufonis (M.E. Jones) Munz', 4);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (3, 'Epimedium', 'Epimedium L.', 4);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (5, 'Broadleaf Rush', 'Juncus planifolius R. Br.', 4);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (1, 'Woolly Sage', 'Salvia funerea M.E. Jones', 4);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (2, 'Frosted Buckwheat', 'Eriogonum incanum Torr. & A. Gray', 4);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (1, 'Bog Birch', 'Betula pumila L. var. renifolia Fernald', 5);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (1, 'Isachne', 'Isachne purpurascens Glassman', 5);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (3, 'Fendler''s Flatsedge', 'Cyperus fendlerianus Boeckeler', 5);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (5, 'Corn', 'Zea mays L.', 5);
+INSERT INTO insumos (tipo, nome, notas, eventos_id_evento) VALUES (4, 'Navajo Evening Primrose', 'Oenothera caespitosa Nutt. ssp. navajoensis W.L. Wagner, Stockhouse & Klein', 5);
 
 -- Transações
 
