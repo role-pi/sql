@@ -63,6 +63,6 @@ CREATE TABLE IF NOT EXISTS `transacoes` (
   `usuarios_id_usuario` INT NOT NULL,
   `insumos_id_insumo` INT NOT NULL,
   PRIMARY KEY (`id_transacao`),
-  CONSTRAINT `fk_transacoes_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) ,
+  CONSTRAINT `fk_transacoes_usuarios1` FOREIGN KEY (`usuarios_id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE,
   CONSTRAINT `fk_transacoes_insumos1` FOREIGN KEY (`insumos_id_insumo`) REFERENCES `insumos` (`id_insumo`) ON DELETE CASCADE
 );
