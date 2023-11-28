@@ -2,7 +2,6 @@
 -- Mon May 29 04:48:57 2023
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
--- DROP DATABASE role;--  
 
 DROP DATABASE IF EXISTS defaultdb;
 
@@ -10,18 +9,6 @@ CREATE DATABASE IF NOT EXISTS defaultdb;
 
 USE defaultdb;
 
------------------------------------------------------
--- Table `enderecos`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `enderecos` (
-  `cep` INT NOT NULL,
-  `logradouro` VARCHAR(45) NOT NULL,
-  `bairro` VARCHAR(45) NOT NULL,
-  `cidade` VARCHAR(45) NOT NULL,
-  `estado` VARCHAR(45) NOT NULL,
-  `país` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`cep`)
-);
 -- -----------------------------------------------------
 -- Table `eventos`
 -- -----------------------------------------------------
@@ -30,13 +17,12 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `nome` VARCHAR(45) NOT NULL,
   `data_inicio` TIMESTAMP NULL,
   `data_fim` TIMESTAMP NULL,
-  `enderecos_cep` INT NULL,
-  `complemento_endereco` VARCHAR(45) NULL,
+  `location` POINT NULL,
+  `location_description` VARCHAR(45) NULL,
   `emoji` VARCHAR(4),
   `cor_1` VARCHAR(6) NULL,
   `cor_2` VARCHAR(6) NULL,
-  PRIMARY KEY (`id_evento`),
-  CONSTRAINT `fk_eventos_enderecos1` FOREIGN KEY (`enderecos_cep`) REFERENCES `enderecos` (`cep`) 
+  PRIMARY KEY (`id_evento`)
 );
 -- -----------------------------------------------------
 -- Table `usuarios`
@@ -46,6 +32,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` VARCHAR(100) NOT NULL,
   `nome` VARCHAR(45) NULL,
   `foto_de_perfil_url` VARCHAR(2000) NULL,
+  `chave_pix` VARCHAR(320) NULL,
+  `data_criacao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_usuario`)
 );
 -- -----------------------------------------------------
@@ -86,61 +74,33 @@ CREATE TABLE IF NOT EXISTS `transacoes` (
 
 -- INSERT
 
--- Endereços
-
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (74593766, 'Morning', '2nd', 'San Antonio', 'Texas', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (93223589, 'Onsgard', 'Fisk', 'Lakewood', 'Washington', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (13536075, 'Schiller', 'Westerfield', 'Bronx', 'New York', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (53081891, 'Mallard', 'Quincy', 'Arlington', 'Virginia', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (61110426, 'Mallory', 'Kropf', 'Jamaica', 'New York', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (23401390, 'Vidon', 'Cascade', 'Lincoln', 'Nebraska', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (36709009, 'Shopko', 'Express', 'Spokane', 'Washington', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (10964764, 'Bluejay', 'Hallows', 'Worcester', 'Massachusetts', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (91238710, 'Menomonie', 'Bultman', 'Washington', 'District of Columbia', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (36151819, 'Sugar', 'Thompson', 'Chico', 'California', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (41962435, 'Toban', 'Carioca', 'Los Angeles', 'California', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (29944539, 'Anhalt', 'Kim', 'San Antonio', 'Texas', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (78562040, 'Valley Edge', 'Algoma', 'New Orleans', 'Louisiana', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (57183222, 'Elgar', 'Steensland', 'Oklahoma City', 'Oklahoma', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (16451100, 'Monterey', 'Farwell', 'Nashville', 'Tennessee', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (98887714, 'Scoville', 'Pearson', 'Beaufort', 'South Carolina', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (46460967, 'Maple', 'Pond', 'Albany', 'New York', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (48628173, 'Butternut', 'Grim', 'Orlando', 'Florida', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (32678411, 'Brentwood', 'Clove', 'Memphis', 'Tennessee', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (26007116, 'Meadow Valley', 'Texas', 'Tucson', 'Arizona', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (30523723, 'Spohn', 'Golden Leaf', 'Kansas City', 'Missouri', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (24511114, 'Algoma', 'Linden', 'El Paso', 'Texas', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (52913607, 'Dahle', 'Havey', 'Newark', 'Delaware', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (29212462, 'Judy', 'Pierstorff', 'Saint Augustine', 'Florida', 'United States');
-INSERT INTO enderecos (cep, logradouro, bairro, cidade, estado, país) VALUES (36803847, 'Longview', 'Mcguire', 'Birmingham', 'Alabama', 'United States');
-
 -- Eventos
 
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Bolander''s Yampah', '2022-09-22 18:55:22', '2023-01-08 09:01:29', 74593766, 'Hill');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Showy Sunflower', '2022-11-04 22:13:14', '2022-10-23 20:25:05', 74593766, 'Circle');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Alfalfa', '2022-07-17 04:36:45', '2022-12-11 10:06:08', 74593766, 'Pass');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Knob Sedge', '2022-07-11 02:33:52', '2022-09-28 06:01:26', 74593766, 'Court');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Rattlebox', '2022-06-11 01:49:13', '2023-02-07 08:25:17', 74593766, 'Lane');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Crabseye Lichen', '2023-03-19 04:51:26', '2022-08-26 18:29:37', 74593766, 'Hill');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Lecidella Lichen', '2023-01-28 14:13:27', '2023-01-05 14:37:11', 74593766, 'Terrace');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Evergreen Candytuft', '2023-01-03 10:12:25', '2023-03-03 22:16:31', 74593766, 'Way');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Thompson''s Beardtongue', '2022-10-09 07:48:06', '2022-09-23 08:24:09', 74593766, 'Way');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Eastern Featherbells', '2022-08-29 08:46:00', '2022-10-10 04:45:50', 74593766, 'Plaza');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Gordon''s Buckwheat', '2022-09-16 07:14:23', '2022-12-01 16:30:27', 74593766, 'Junction');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Boundary Peak Rockcress', '2023-02-05 04:06:14', '2023-01-11 06:33:34', 74593766, 'Pass');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('European Purple Lousewort', '2023-01-08 03:06:24', '2023-01-11 22:55:56', 74593766, 'Junction');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Berg''s Hedgenettle', '2023-03-12 21:50:09', '2023-03-19 21:44:29', 74593766, 'Parkway');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Buddlejaleaf Viburnum', '2022-10-25 22:07:36', '2022-11-27 13:12:19', 74593766, 'Junction');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Carolina Oatgrass', '2023-01-30 20:01:38', '2022-12-09 06:47:49', 74593766, 'Trail');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Hairy Nightshade', '2022-09-29 23:31:23', '2022-10-26 01:43:16', 74593766, 'Hill');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Cleft Phlox', '2022-08-09 03:02:11', '2022-11-11 17:20:25', 74593766, 'Road');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Ross'' Avens', '2022-07-04 14:21:32', '2022-06-21 00:05:10', 74593766, 'Lane');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Longleaf False Goldeneye', '2022-06-08 12:01:23', '2022-08-17 15:58:16', 74593766, 'Court');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Welsh''s Bugseed', '2022-06-03 16:55:02', '2023-02-08 02:21:41', 74593766, 'Terrace');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Red Grama', '2023-03-02 16:46:42', '2022-06-05 00:40:39', 74593766, 'Parkway');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Woolly Brickellbush', '2023-02-16 22:01:53', '2022-07-12 07:09:38', 74593766, 'Hill');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Plagiobryum Moss', '2022-06-21 13:01:20', '2022-06-24 11:16:10', 74593766, 'Road');
-INSERT INTO eventos (nome, data_inicio, data_fim, enderecos_cep, complemento_endereco) VALUES ('Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', 74593766, 'Lane');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Bolander''s Yampah', '2022-09-22 18:55:22', '2023-01-08 09:01:29', POINT(-26.90055447570669, -49.003983917372516), 'Hill');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Showy Sunflower', '2022-11-04 22:13:14', '2022-10-23 20:25:05', POINT(-26.90055447570669, -49.003983917372516), 'Circle');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Alfalfa', '2022-07-17 04:36:45', '2022-12-11 10:06:08', POINT(-26.90055447570669, -49.003983917372516), 'Pass');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Knob Sedge', '2022-07-11 02:33:52', '2022-09-28 06:01:26', POINT(-26.90055447570669, -49.003983917372516), 'Court');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Rattlebox', '2022-06-11 01:49:13', '2023-02-07 08:25:17', POINT(-26.90055447570669, -49.003983917372516), 'Lane');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Crabseye Lichen', '2023-03-19 04:51:26', '2022-08-26 18:29:37', POINT(-26.90055447570669, -49.003983917372516), 'Hill');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Lecidella Lichen', '2023-01-28 14:13:27', '2023-01-05 14:37:11', POINT(-26.90055447570669, -49.003983917372516), 'Terrace');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Evergreen Candytuft', '2023-01-03 10:12:25', '2023-03-03 22:16:31', POINT(-26.90055447570669, -49.003983917372516), 'Way');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Thompson''s Beardtongue', '2022-10-09 07:48:06', '2022-09-23 08:24:09', POINT(-26.90055447570669, -49.003983917372516), 'Way');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Eastern Featherbells', '2022-08-29 08:46:00', '2022-10-10 04:45:50', POINT(-26.90055447570669, -49.003983917372516), 'Plaza');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Gordon''s Buckwheat', '2022-09-16 07:14:23', '2022-12-01 16:30:27', POINT(-26.90055447570669, -49.003983917372516), 'Junction');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Boundary Peak Rockcress', '2023-02-05 04:06:14', '2023-01-11 06:33:34', POINT(-26.90055447570669, -49.003983917372516), 'Pass');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('European Purple Lousewort', '2023-01-08 03:06:24', '2023-01-11 22:55:56', POINT(-26.90055447570669, -49.003983917372516), 'Junction');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Berg''s Hedgenettle', '2023-03-12 21:50:09', '2023-03-19 21:44:29', POINT(-26.90055447570669, -49.003983917372516), 'Parkway');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Buddlejaleaf Viburnum', '2022-10-25 22:07:36', '2022-11-27 13:12:19', POINT(-26.90055447570669, -49.003983917372516), 'Junction');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Carolina Oatgrass', '2023-01-30 20:01:38', '2022-12-09 06:47:49', POINT(-26.90055447570669, -49.003983917372516), 'Trail');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Hairy Nightshade', '2022-09-29 23:31:23', '2022-10-26 01:43:16', POINT(-26.90055447570669, -49.003983917372516), 'Hill');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Cleft Phlox', '2022-08-09 03:02:11', '2022-11-11 17:20:25', POINT(-26.90055447570669, -49.003983917372516), 'Road');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Ross'' Avens', '2022-07-04 14:21:32', '2022-06-21 00:05:10', POINT(-26.90055447570669, -49.003983917372516), 'Lane');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Longleaf False Goldeneye', '2022-06-08 12:01:23', '2022-08-17 15:58:16', POINT(-26.90055447570669, -49.003983917372516), 'Court');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Welsh''s Bugseed', '2022-06-03 16:55:02', '2023-02-08 02:21:41', POINT(-26.90055447570669, -49.003983917372516), 'Terrace');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Red Grama', '2023-03-02 16:46:42', '2022-06-05 00:40:39', POINT(-26.90055447570669, -49.003983917372516), 'Parkway');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Woolly Brickellbush', '2023-02-16 22:01:53', '2022-07-12 07:09:38', POINT(-26.90055447570669, -49.003983917372516), 'Hill');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Plagiobryum Moss', '2022-06-21 13:01:20', '2022-06-24 11:16:10', POINT(-26.90055447570669, -49.003983917372516), 'Road');
+INSERT INTO eventos (nome, data_inicio, data_fim, location, location_description) VALUES ('Henbane', '2023-04-19 22:30:47', '2022-06-01 18:48:44', POINT(-26.90055447570669, -49.003983917372516), 'Lane');
 
 -- Usuários
 
