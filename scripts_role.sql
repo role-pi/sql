@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `data_inicio` TIMESTAMP NULL,
   `data_fim` TIMESTAMP NULL,
   `location` POINT NULL,
-  `location_description` VARCHAR(45) NULL,
+  `location_description` VARCHAR(100) NULL,
   `emoji` VARCHAR(4),
   `cor_1` VARCHAR(6) NULL,
   `cor_2` VARCHAR(6) NULL,
